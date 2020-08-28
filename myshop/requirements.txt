@@ -3,3 +3,4 @@ sorl-thumbnail
 django-rosetta
 pillow
 django-grappelli
+django-modeltranslation

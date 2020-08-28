@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'sorl.thumbnail',
     'rosetta',
+
 ]
 
 MIDDLEWARE = [
@@ -149,6 +151,9 @@ LANGUAGES = (
     ('ru', _('Russian')),
 )
 
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_TRANSLATION_REGISTRY = 'myshop.translation'
 
 
 
