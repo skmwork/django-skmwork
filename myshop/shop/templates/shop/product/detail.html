@@ -7,7 +7,7 @@
 {% block content %}
     <div class="product-detail">
 		{% load thumbnail %}
-		{% thumbnail product.image "150" as im %}
+		{% thumbnail product.image "300" as im %}
              <img src="{{ im.url }}" class="image-detail">
         {% endthumbnail %}
         <h1>{{ product.name }}</h1>
@@ -16,7 +16,7 @@
         <form action="{% url 'cart:cart_add' product.id %}" method="post">
             {{ cart_product_form }}
             {% csrf_token %}
-           <input type="submit" value="{% trans "Add to cart" %}">
+           <input type="submit" value="{% trans 'Add to cart' %}">
         </form>
         {{ product.description|linebreaks }}
     </div>

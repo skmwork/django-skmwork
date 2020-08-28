@@ -24,7 +24,7 @@
             <div class="item">
 
                 {% load thumbnail %}
-                {% thumbnail product.image "150" as im %}
+                {% thumbnail product.image "300" as im %}
                     <a href="{{ product.get_absolute_url }}">
                         <img src="{{ im.url }}" class="image-detail">
                     </a>
