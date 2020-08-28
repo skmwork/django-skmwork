@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 12:48-0700\n"
-"PO-Revision-Date: 2020-08-27 22:51+0000\n"
-"Last-Translator: b'hello  <ya@ya.ru>'\n"
+"POT-Creation-Date: 2020-08-28 08:49-0700\n"
+"PO-Revision-Date: 2020-08-28 18:50+0000\n"
+"Last-Translator: b'hello  <a@a.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -167,3 +167,11 @@ msgstr "Ваш аккаунт успешно создан. Сейчас вы м�
 #: templates/accounts/registration/register_done.html:8
 msgid "log in"
 msgstr "войти"
+
+#: views.py:36
+msgid "Profile updated successfully"
+msgstr "Профиль успешно обновлён"
+
+#: views.py:38
+msgid "Error updating your profile"
+msgstr "Ошибка обновления профиля"

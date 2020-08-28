@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 00:39-0700\n"
+"POT-Creation-Date: 2020-08-28 08:46-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: models.py:13 templates/product/list.html:9
+#: models.py:13 templates/shop/product/list.html:9
 msgid "Categories"
 msgstr ""
 
@@ -70,27 +70,32 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: models.py:39 templates/product/list.html:5 templates/product/list.html:22
+#: models.py:39 templates/shop/product/list.html:5
+#: templates/shop/product/list.html:22
 msgid "Products"
 msgstr ""
 
-#: templates/base.html:8 templates/base.html:14
+#: templates/shop/base.html:8 templates/shop/base.html:46
 msgid "My shop"
 msgstr ""
 
-#: templates/base.html:19
+#: templates/shop/base.html:20
 msgid "Language"
 msgstr ""
 
-#: templates/base.html:36
+#: templates/shop/base.html:37
+msgid "User"
+msgstr ""
+
+#: templates/shop/base.html:41
 msgid "Log-in"
 msgstr ""
 
-#: templates/base.html:42
+#: templates/shop/base.html:50
 msgid "Your cart"
 msgstr ""
 
-#: templates/base.html:44
+#: templates/shop/base.html:52
 #, python-format
 msgid ""
 "\n"
@@ -101,14 +106,18 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/base.html:49
+#: templates/shop/base.html:57
 msgid "Your cart is empty"
 msgstr ""
 
-#: templates/product/detail.html:15 templates/product/list.html:34
+#: templates/shop/product/detail.html:15 templates/shop/product/list.html:34
 msgid "rub"
 msgstr ""
 
-#: templates/product/detail.html:19
+#: templates/shop/product/detail.html:19
 msgid "Add to cart"
+msgstr ""
+
+#: templates/shop/product/list.html:12
+msgid "All"
 msgstr ""
