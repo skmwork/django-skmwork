@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-27 00:39-0700\n"
+"PO-Revision-Date: 2020-08-27 10:53+0000\n"
+"Last-Translator: b'admin  <ya@ya.ru>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: models.py:7
+msgid "Category name"
+msgstr "Название категории"
+
+#: models.py:8 models.py:26
+msgid "Slug"
+msgstr "Путь"
+
+#: models.py:12
+msgid "Category"
+msgstr "Категория"
+
+#: models.py:13 templates/product/list.html:9
+msgid "Categories"
+msgstr "Категории"
+
+#: models.py:25
+msgid "Product name"
+msgstr "Название продукта"
+
+#: models.py:27
+msgid "Image"
+msgstr "Изображение"
+
+#: models.py:28
+msgid "Description"
+msgstr "Описание"
+
+#: models.py:29
+msgid "Price"
+msgstr "Цена"
+
+#: models.py:30
+msgid "Stock"
+msgstr "В наличии"
+
+#: models.py:31
+msgid "Available"
+msgstr "Доступно"
+
+#: models.py:32
+msgid "Created"
+msgstr "Создано"
+
+#: models.py:33
+msgid "Updated"
+msgstr "Обновлено"
+
+#: models.py:38
+msgid "Product"
+msgstr "Товар"
+
+#: models.py:39 templates/product/list.html:5 templates/product/list.html:22
+msgid "Products"
+msgstr "Товары"
+
+#: templates/base.html:8 templates/base.html:14
+msgid "My shop"
+msgstr "Магазин"
+
+#: templates/base.html:19
+msgid "Language"
+msgstr "Язык"
+
+#: templates/base.html:36
+msgid "Log-in"
+msgstr "Войти"
+
+#: templates/base.html:42
+msgid "Your cart"
+msgstr "Корзина"
+
+#: templates/base.html:44
+#, python-format
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t\t%(total_items)s item, %(total_price)s rub."
+#| msgid_plural ""
+#| "\n"
+#| " %(total_items)s items, %(total_price)s rub.\n"
+#| "\t\t\t\t\t "
+msgid ""
+"\n"
+"\t\t\t\t\t\t%(total_items)s item, %(total_price)s rub."
+msgid_plural ""
+" %(total_items)s items, %(total_price)s rub.\n"
+"\t\t\t\t\t "
+msgstr[0] ""
+" %(total_items)s товар, %(total_price)s руб.\n"
+"\t\t\t\t\t "
+msgstr[1] ""
+" %(total_items)s товара, %(total_price)s руб.\n"
+"\t\t\t\t\t "
+msgstr[2] ""
+" %(total_items)s товаров, %(total_price)s руб.\n"
+"\t\t\t\t\t "
+
+#: templates/base.html:49
+msgid "Your cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: templates/product/detail.html:15 templates/product/list.html:34
+msgid "rub"
+msgstr "руб."
+
+#: templates/product/detail.html:19
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#~ msgid "Shop"
+#~ msgstr "Магазин"

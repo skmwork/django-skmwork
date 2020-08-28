@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+    <div class="product-detail">
+		{% load thumbnail %}
+		{% thumbnail product.image "150" as im %}
+             <img src="{{ im.url }}" class="image-detail">
+        {% endthumbnail %}
+        <h1>{{ product.name }}</h1>
+        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+        <p class="price">{{ product.price }}  {% trans "rub" %}</p>
+        <form action="{% url 'cart:cart_add' product.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+           <input type="submit" value="{% trans "Add to cart" %}">
+        </form>
+        {{ product.description|linebreaks }}
+    </div>
+{% endblock %}

@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 00:19-0700\n"
+"PO-Revision-Date: 2020-05-21 09:30+0000\n"
+"Last-Translator: b'  <ya@ya.ru>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: apps.py:7 models.py:31
+msgid "Orders"
+msgstr "Заказы"
+
+#: models.py:10
+msgid "First name"
+msgstr "Имя"
+
+#: models.py:11
+msgid "Last name"
+msgstr "Фамилия"
+
+#: models.py:12
+msgid "Email"
+msgstr "Электронная почта"
+
+#: models.py:13
+msgid "Address"
+msgstr "Адрес"
+
+#: models.py:14
+msgid "Postal code"
+msgstr "Почтовый код"
+
+#: models.py:15
+msgid "City"
+msgstr "Город"
+
+#: models.py:16
+msgid "Created"
+msgstr "Создан"
+
+#: models.py:17
+msgid "Updated"
+msgstr "Обновлён"
+
+#: models.py:18
+msgid "Paid"
+msgstr "Оплачен"
+
+#: models.py:24
+msgid "Discount"
+msgstr "Скидка"
+
+#: models.py:30
+msgid "Order"
+msgstr "Заказ"
+
+#: models.py:44
+msgid "Price"
+msgstr "Цена"
+
+#: models.py:45
+msgid "Quantity"
+msgstr "Количество"
+
+#: models.py:54
+msgid "Order item"
+msgstr "Продукты в заказе"
+
+#: models.py:55
+msgid "Order items"
+msgstr "Продукт в заказе"
+
+#: templates/orders/order/create.html:5 templates/orders/order/create.html:9
+msgid "Checkout"
+msgstr "Оформить заказ"
+
+#: templates/orders/order/create.html:12
+msgid "Your order"
+msgstr "Ваш заказ"
+
+#: templates/orders/order/create.html:15
+msgid "rub"
+msgstr "руб."
+
+#: templates/orders/order/create.html:19
+#, python-format
+msgid ""
+"\n"
+"                        \"%(code)s\" (%(discount)s%% off)\n"
+"                    "
+msgstr ""
+"\n"
+"\"%(code)s\" (%(discount)s%% скидка)"
+
+#: templates/orders/order/create.html:26
+msgid "Total"
+msgstr "Итого"
+
+#: templates/orders/order/create.html:31
+msgid "Place order"
+msgstr "Заказать"
+
+#: templates/orders/order/created.html:4 templates/orders/order/created.html:7
+msgid "Thank you"
+msgstr "Спасибо!"
+
+#: templates/orders/order/created.html:8
+msgid "Your order has been successfully completed. Your order number is"
+msgstr "Ваш заказ успешно зарегистрирован. Номер заказа "

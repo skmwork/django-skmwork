@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-27 12:48-0700\n"
+"PO-Revision-Date: 2020-08-27 10:28+0000\n"
+"Last-Translator: b'admin  <ya@ya.ru>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: models.py:8
+msgid "Birth date"
+msgstr ""
+
+#: templates/accounts/account/edit.html:4
+#: templates/accounts/account/edit.html:7
+msgid "Edit your account"
+msgstr ""
+
+#: templates/accounts/account/edit.html:8
+msgid "Logout"
+msgstr ""
+
+#: templates/accounts/account/edit.html:8
+msgid "Password-change"
+msgstr ""
+
+#: templates/accounts/account/edit.html:9
+msgid "You can edit your account using the following form:"
+msgstr ""
+
+#: templates/accounts/account/edit.html:14
+msgid "Save changes"
+msgstr ""
+
+#: templates/accounts/account/register.html:4
+#: templates/accounts/account/register.html:7
+msgid "Create an account"
+msgstr ""
+
+#: templates/accounts/account/register.html:8
+msgid "Please, sign up using the following form:"
+msgstr ""
+
+#: templates/accounts/registration/logged_out.html:4
+#: templates/accounts/registration/logged_out.html:6
+msgid "Logged out"
+msgstr ""
+
+#: templates/accounts/registration/logged_out.html:7
+msgid "You have been successfully logged out. You can "
+msgstr ""
+
+#: templates/accounts/registration/logged_out.html:7
+msgid "log-in again"
+msgstr ""
+
+#: templates/accounts/registration/login.html:4
+#: templates/accounts/registration/login.html:10
+#: templates/accounts/registration/login.html:25
+msgid "Log-in"
+msgstr ""
+
+#: templates/accounts/registration/login.html:8
+msgid "Registration"
+msgstr ""
+
+#: templates/accounts/registration/login.html:8
+msgid "Reset password"
+msgstr ""
+
+#: templates/accounts/registration/login.html:13
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: templates/accounts/registration/login.html:16
+msgid "Please, use the following form to log-in."
+msgstr ""
+
+#: templates/accounts/registration/password_change_done.html:4
+#: templates/accounts/registration/password_change_done.html:7
+msgid "Password changed"
+msgstr ""
+
+#: templates/accounts/registration/password_change_done.html:8
+msgid "Your password has been successfully changed."
+msgstr ""
+
+#: templates/accounts/registration/password_change_form.html:4
+#: templates/accounts/registration/password_change_form.html:7
+msgid "Change you password"
+msgstr ""
+
+#: templates/accounts/registration/password_change_form.html:8
+msgid "Use the form below to change your password."
+msgstr ""
+
+#: templates/accounts/registration/password_reset_complete.html:4
+msgid "Password reset"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_complete.html:7
+msgid "Password set"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_complete.html:8
+msgid "Your password has been set. You can"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_complete.html:8
+msgid "log in now"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_confirm.html:4
+#: templates/accounts/registration/password_reset_confirm.html:7
+#: templates/accounts/registration/password_reset_done.html:4
+#: templates/accounts/registration/password_reset_done.html:7
+#: templates/accounts/registration/password_reset_form.html:4
+msgid "Reset your password"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_confirm.html:9
+msgid "Please enter your new password twice:"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_done.html:8
+msgid "We've emailed you instructions for setting your password."
+msgstr ""
+
+#: templates/accounts/registration/password_reset_done.html:9
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with."
+msgstr ""
+
+#: templates/accounts/registration/password_reset_form.html:7
+msgid "Forgotten your password?"
+msgstr ""
+
+#: templates/accounts/registration/password_reset_form.html:8
+msgid "Enter your e-mail address to obtain a new password."
+msgstr ""
+
+#: templates/accounts/registration/register_done.html:4
+#: templates/accounts/registration/register_done.html:7
+msgid "Welcome"
+msgstr ""
+
+#: templates/accounts/registration/register_done.html:8
+msgid "Your account has been successfully created. Now you can"
+msgstr ""
+
+#: templates/accounts/registration/register_done.html:8
+msgid "log in"
+msgstr ""
