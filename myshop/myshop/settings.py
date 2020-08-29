@@ -12,10 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -27,7 +25,6 @@ SECRET_KEY = '=asqse+*wmuk501s(^6%2(o($#*eo3_ncut=my5_h3!j^q2sjn'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -82,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -92,7 +88,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -112,11 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -126,18 +118,27 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 CART_SESSION_ID = 'cart'
 
-STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_DIR = os.path.join(BASE_DIR, 'media/')
+
+STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static/')
 
-from django.utils.translation import gettext_lazy as _
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 USE_I18N = True
 LANGUAGE_CODE = 'ru'
@@ -146,28 +147,23 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
 
+
+from django.utils.translation import gettext_lazy as _
 LANGUAGES = (
     ('en', _('English')),
     ('ru', _('Russian')),
 )
 
-
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'myshop.translation'
-
-
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                            'accounts.authentication.EmailAuthBackend',
                            ]
 
-
-from django.urls import reverse, reverse_lazy
-
 LOGIN_REDIRECT_URL = 'shop:product_list'
 LOGIN_URL = 'accounts:login'
-
 LOGOUT_URL = 'accounts:logout'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
-#ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
+# ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
