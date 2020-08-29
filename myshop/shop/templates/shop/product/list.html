@@ -2,37 +2,37 @@
 {% load i18n %}
 {% load static %}
 {% block title %}
-{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}
+    {% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}
 {% endblock %}
 {% block content %}
-<div id="sidebar">
-    <h3>{% trans "Categories" %}</h3>
-    <ul>
-        <li {% if not category %}class="selected" {% endif %}>
-            <a href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
-        </li>
-        {% for c in categories %}
-        <li {% if category.slug == c.slug %}class="selected" {% endif %}>
-            <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-<div id="main" class="product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
-    {% for product in products %}
-    <div class="item">
-
-        {% load thumbnail %}
-        {% thumbnail product.image "300" as im %}
-        <a href="{{ product.get_absolute_url }}">
-            <img src="{{ im.url }}" class="image-detail">
-        </a>
-        {% endthumbnail %}
-        <br />
-        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-        {{ product.price }} {% trans "rub" %}
+    <div id="sidebar">
+        <h3>{% trans "Categories" %}</h3>
+        <ul>
+            <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
+            </li>
+            {% for c in categories %}
+                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
-    {% endfor %}
-</div>
+    <div id="main" class="product-list">
+        <h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
+        {% for product in products %}
+            <div class="item">
+
+                {% load thumbnail %}
+                {% thumbnail product.image "300" as im %}
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{{ im.url }}" class="image-detail">
+                    </a>
+                {% endthumbnail %}
+				<br/>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                {{ product.price }} {% trans "rub" %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
