@@ -1,1 +1,1 @@
-# skmwork-django-shop
+# django-skmwork-shop
