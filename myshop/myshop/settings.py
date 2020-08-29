@@ -124,21 +124,16 @@ USE_TZ = True
 CART_SESSION_ID = 'cart'
 
 MEDIA_URL = '/media/'
+
 MEDIA_DIR = os.path.join(BASE_DIR, 'media/')
 
 STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
 
 USE_I18N = True
 LANGUAGE_CODE = 'ru'
