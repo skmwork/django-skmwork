@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 08:46-0700\n"
+"POT-Creation-Date: 2020-09-11 19:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,59 +18,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:7
+#: apps.py:7
+msgid "Shop"
+msgstr ""
+
+#: models.py:8
 msgid "Category name"
 msgstr ""
 
-#: models.py:8 models.py:26
+#: models.py:9 models.py:27
 msgid "Slug"
 msgstr ""
 
-#: models.py:12
+#: models.py:13
 msgid "Category"
 msgstr ""
 
-#: models.py:13 templates/shop/product/list.html:9
+#: models.py:14 templates/shop/product/list.html:9
 msgid "Categories"
 msgstr ""
 
-#: models.py:25
+#: models.py:26
 msgid "Product name"
 msgstr ""
 
-#: models.py:27
+#: models.py:28
 msgid "Image"
 msgstr ""
 
-#: models.py:28
+#: models.py:29
 msgid "Description"
 msgstr ""
 
-#: models.py:29
+#: models.py:30
 msgid "Price"
 msgstr ""
 
-#: models.py:30
+#: models.py:31
 msgid "Stock"
 msgstr ""
 
-#: models.py:31
+#: models.py:32
 msgid "Available"
 msgstr ""
 
-#: models.py:32
+#: models.py:33
 msgid "Created"
 msgstr ""
 
-#: models.py:33
+#: models.py:34
 msgid "Updated"
 msgstr ""
 
-#: models.py:38
+#: models.py:39
 msgid "Product"
 msgstr ""
 
-#: models.py:39 templates/shop/product/list.html:5
+#: models.py:40 templates/shop/product/list.html:5
 #: templates/shop/product/list.html:22
 msgid "Products"
 msgstr ""

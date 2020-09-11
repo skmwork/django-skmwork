@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 08:46-0700\n"
-"PO-Revision-Date: 2020-08-28 18:47+0000\n"
-"Last-Translator: b'hello  <a@a.ru>'\n"
+"POT-Creation-Date: 2020-09-11 19:45+0000\n"
+"PO-Revision-Date: 2020-09-11 19:47+0000\n"
+"Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,59 +19,63 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: models.py:7
+#: apps.py:7
+msgid "Shop"
+msgstr "Магазин"
+
+#: models.py:8
 msgid "Category name"
 msgstr "Название категории"
 
-#: models.py:8 models.py:26
+#: models.py:9 models.py:27
 msgid "Slug"
 msgstr "Путь"
 
-#: models.py:12
+#: models.py:13
 msgid "Category"
 msgstr "Категория"
 
-#: models.py:13 templates/shop/product/list.html:9
+#: models.py:14 templates/shop/product/list.html:9
 msgid "Categories"
 msgstr "Категории"
 
-#: models.py:25
+#: models.py:26
 msgid "Product name"
 msgstr "Название продукта"
 
-#: models.py:27
+#: models.py:28
 msgid "Image"
 msgstr "Изображение"
 
-#: models.py:28
+#: models.py:29
 msgid "Description"
 msgstr "Описание"
 
-#: models.py:29
+#: models.py:30
 msgid "Price"
 msgstr "Цена"
 
-#: models.py:30
+#: models.py:31
 msgid "Stock"
 msgstr "В наличии"
 
-#: models.py:31
+#: models.py:32
 msgid "Available"
 msgstr "Доступно"
 
-#: models.py:32
+#: models.py:33
 msgid "Created"
 msgstr "Создано"
 
-#: models.py:33
+#: models.py:34
 msgid "Updated"
 msgstr "Обновлено"
 
-#: models.py:38
+#: models.py:39
 msgid "Product"
 msgstr "Товар"
 
-#: models.py:39 templates/shop/product/list.html:5
+#: models.py:40 templates/shop/product/list.html:5
 #: templates/shop/product/list.html:22
 msgid "Products"
 msgstr "Товары"
@@ -136,6 +140,3 @@ msgstr "Добавить в корзину"
 #: templates/shop/product/list.html:12
 msgid "All"
 msgstr "Все"
-
-#~ msgid "Shop"
-#~ msgstr "Магазин"

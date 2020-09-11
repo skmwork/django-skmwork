@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 08:49-0700\n"
+"POT-Creation-Date: 2020-09-11 19:55+0000\n"
 "PO-Revision-Date: 2020-08-27 10:28+0000\n"
 "Last-Translator: b'admin  <ya@ya.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
+#: apps.py:7
+msgid "Accounts"
+msgstr ""
+
 #: models.py:8
 msgid "Birth date"
+msgstr ""
+
+#: models.py:14
+msgid "Profile"
+msgstr ""
+
+#: models.py:15
+msgid "Profiles"
 msgstr ""
 
 #: templates/accounts/account/edit.html:4
