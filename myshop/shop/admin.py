@@ -6,6 +6,7 @@ from modeltranslation.admin import TranslationAdmin
 class CategoryAdmin(TranslationAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
+
 admin.site.register(Category, CategoryAdmin)
 
 

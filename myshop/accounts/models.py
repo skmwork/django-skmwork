@@ -9,3 +9,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
+
+    class Meta:
+        verbose_name = _('Profile')
+        verbose_name_plural = _('Profiles')
