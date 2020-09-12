@@ -3,5 +3,7 @@
 __pycache__/
 media/
 staticfiles/
-skmwork-shop/cache/
 cache/
+static/admin
+static/grappelli
+static/modeltranslation
