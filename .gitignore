@@ -4,6 +4,6 @@ __pycache__/
 media/
 staticfiles/
 cache/
-static/admin
-static/grappelli
-static/modeltranslation
+static/admin/
+static/grappelli/
+static/modeltranslation/
