@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 19:45+0000\n"
-"PO-Revision-Date: 2020-09-11 19:47+0000\n"
+"POT-Creation-Date: 2020-09-13 20:58+0000\n"
+"PO-Revision-Date: 2020-09-13 21:00+0000\n"
 "Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -102,32 +102,42 @@ msgstr "Корзина"
 
 #: templates/shop/base.html:52
 #, python-format
-#| msgid ""
-#| "\n"
-#| "\t\t\t\t\t\t%(total_items)s item, %(total_price)s rub."
-#| msgid_plural ""
-#| "\n"
-#| " %(total_items)s items, %(total_price)s rub.\n"
-#| "\t\t\t\t\t "
 msgid ""
 "\n"
 "\t\t\t\t\t\t%(total_items)s item, %(total_price)s rub."
 msgid_plural ""
+"\n"
 " %(total_items)s items, %(total_price)s rub.\n"
 "\t\t\t\t\t "
 msgstr[0] ""
+"\n"
 " %(total_items)s товар, %(total_price)s руб.\n"
 "\t\t\t\t\t "
 msgstr[1] ""
+"\n"
 " %(total_items)s товара, %(total_price)s руб.\n"
 "\t\t\t\t\t "
 msgstr[2] ""
+"\n"
 " %(total_items)s товаров, %(total_price)s руб.\n"
 "\t\t\t\t\t "
 
 #: templates/shop/base.html:57
 msgid "Your cart is empty"
 msgstr "Ваша корзина пуста"
+
+#: templates/shop/pagination.html:5
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: templates/shop/pagination.html:8
+#, python-format
+msgid "Page %(page_number)s of %(num_pages)s"
+msgstr "Страница %(page_number)s из %(num_pages)s"
+
+#: templates/shop/pagination.html:11
+msgid "Next"
+msgstr "Следующая"
 
 #: templates/shop/product/detail.html:15 templates/shop/product/list.html:34
 msgid "rub"
