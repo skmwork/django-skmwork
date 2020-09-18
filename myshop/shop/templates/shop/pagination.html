@@ -1,14 +1,21 @@
 {% load i18n %}
-<div class="pagination">
- <span class="step-links">
-  {% if page.has_previous %}
-      <a href="?page={{ page.previous_page_number }}">{% trans "Previous" %}</a>
-  {% endif %}
-    <span class="current">
-  {% blocktrans with page_number=page.number num_pages=page.paginator.num_pages%}Page {{ page_number }} of {{ num_pages }}{% endblocktrans %}
-    </span>
-  {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}">{% trans "Next" %}</a>
-  {% endif %}
-  </span>
-</div>
+
+
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% for i in page.paginator.page_range %}
+                {% ifequal i page.number %}
+                     <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">{{ i }}<span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link"  href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endifequal %}
+            {% endfor %}
+
+        </ul>
+    </nav>
+
+
