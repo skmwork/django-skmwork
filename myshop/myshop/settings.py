@@ -151,6 +151,7 @@ LANGUAGES = (
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'myshop.translation'
+TRANSLATABLE_MODEL_MODULES=["cart.models", "shop.models", "coupons.models", "accounts.models"]
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                            'accounts.authentication.EmailAuthBackend',
@@ -162,3 +163,4 @@ LOGOUT_URL = 'accounts:logout'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 # ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
+
