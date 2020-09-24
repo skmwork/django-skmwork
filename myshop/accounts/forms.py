@@ -28,12 +28,15 @@ class UserEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email')
+        fields = ('email', 'last_name','first_name')
+
+    def __init__(self, *args, **kwargs):
+        super(UserEditForm, self).__init__(*args, **kwargs)
+        self.fields['email'].disabled = True
 
 
 class ProfileEditForm(forms.ModelForm):
     
     class Meta:
         model = Profile
-        fields = ('date_of_birth',)
-        widgets = {'date_of_birth': DateInput()}
+        fields = ()

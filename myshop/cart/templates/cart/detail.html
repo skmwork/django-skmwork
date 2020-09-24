@@ -6,16 +6,18 @@
 {% endblock %}
 {% block content %}
 {% if cart %}
+<row>
+    <div class="col-12 mb-4">
     <h1>{% trans "Your shopping cart" %}</h1>
-    <table class="cart">
+    <table class="table">
         <thead>
         <tr>
-            <th>{% trans "Image" %} </th>
-            <th>{% trans "Product" %} </th>
-            <th>{% trans "Quantity" %} </th>
-            <th>{% trans "Remove" %} </th>
-            <th>{% trans "Unit price" %} </th>
-            <th>{% trans "Price" %} </th>
+            <th scope="col">{% trans "Image" %} </th>
+            <th scope="col">{% trans "Product" %} </th>
+            <th scope="col">{% trans "Quantity" %} </th>
+            <th scope="col">{% trans "Remove" %} </th>
+            <th scope="col">{% trans "Unit price" %} </th>
+            <th scope="col">{% trans "Price" %} </th>
         </tr>
         </thead>
         <tbody>
@@ -62,18 +64,27 @@
             </td>
         </tr>
         </tbody>
-    </table>
-    <form action="{% url 'coupons:apply' %}" method="post">
+    </table></div>
+    </row>
+<row>
+     <div class="col-12 mb-4">
+
+    <form class="form-inline" action="{% url 'coupons:apply' %}" method="post">
     {{ coupon_apply_form }}
-    <input type="submit" value="{% trans 'Apply' %}">
+        <button type="submit" class="btn btn-success btn-light btn-sm">{% trans 'Apply' %}</button>
     {% csrf_token %}
     </form>
+             </div>
+
+    </row>
+<row>
+    <div class="col-12">
     <p class="text-right">
-        <a href="{% url 'shop:product_list' %}" class="button light">{% trans "Continue shopping" %}</a>
-        <a href="{% url 'orders:order_create' %}" class="button">
+        <button href="{% url 'shop:product_list' %}" type="button" class="btn btn-link">{% trans "Continue shopping" %}</button>
+        <button href="{% url 'orders:order_create' %}" class='btn btn-success'>
             {% trans "Checkout" %} 
-        </a>
-    </p>
+        </button>
+    </p></div></row>
 {% else %}
 <h1>{% trans "Your cart is empty" %}</h1>
 {% endif %}

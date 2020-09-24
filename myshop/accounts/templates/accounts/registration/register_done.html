@@ -4,6 +4,10 @@
 {% block title %}{% trans "Welcome" %}{% endblock %}
 
 {% block content %}
+<div class='row'>
+    <div class="col-12 text-center py-5">
     <h1>{% trans "Welcome" %} {{ new_user.first_name }}!</h1>
     <p>{% trans "Your account has been successfully created. Now you can" %} <a href="{% url 'accounts:login' %}">{% trans "log in" %}</a>.</p>
+      </div>
+</div>
 {% endblock %}

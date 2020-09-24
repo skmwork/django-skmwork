@@ -22,9 +22,10 @@
             {{ form.as_p }}
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}"/>
-            <p><input type="submit" value={% trans "Log-in" %}></p>
+            <p><button type='submit' class='btn btn-primary'>{% trans "Log-in" %}</button>
         </form>
     </div>
 </div>
+
 
 {% endblock %}

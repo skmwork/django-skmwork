@@ -13,27 +13,21 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
-<div class="d-flex flex-column h-100">
-    <header>
-        {% include 'shop/navbar.html' %}
-    </header>
-</div>
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li class="{{ message.tags }}">
-        {{ message|safe }}
-    </li>
-    {% endfor %}
-</ul>
-{% endif %}
-<!-- Begin page content -->
-<main role="main" class="container">
-    <div>
-        {% block content %}
-        {% endblock %}
+{% include 'shop/navbar.html' %}
+      <div class='container'>
+        {% if messages %}
+      <div class="alert alert-success messages">
+          {% for message in messages %}
+          <span>{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+              {{ message }}<br/>
+          </span>
+          {% endfor %}
+      </div>
+      {% endif %}
+      {% block content %}{% endblock %}
     </div>
-    <form id="csrf_token">{% csrf_token %}</form>
+<form id="csrf_token">{% csrf_token %}</form>
 </main>
 <script src="{% static '/js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static '/js/popper.min.js' %}"></script>
