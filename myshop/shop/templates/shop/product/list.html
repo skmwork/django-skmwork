@@ -13,9 +13,9 @@
         <div class="col-12 col-sm-12">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="navbar-nav">
-                <a class="nav-link{% if not category %} active{% endif %}" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%%20url%20'shop:product_list'%20%%7D">{% trans "All" %}</a>
+                <a class="nav-link{% if not category %} active{% endif %}" href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
                 {% for c in categories %}
-                    <a class="nav-item nav-link{% if category.slug == c.slug %} active{% endif %}" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%7B%20c.get_absolute_url%20%7D%7D">{{ c.name }}</a>
+                    <a class="nav-item nav-link{% if category.slug == c.slug %} active{% endif %}" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
                 {% endfor %}
             </div>
         </nav>
@@ -29,8 +29,8 @@
                         <div class="card border-0">
                             {% load thumbnail %}
                             {% thumbnail product.image "300" as im %}
-                            <a class="card-img-hover" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%7B%20product.get_absolute_url%20%7D%7D">
-                                <img class="card-img-top" src="list_files/%2520im.html" alt="{{ product.name }}">
+                            <a class="card-img-hover" href="{{ product.get_absolute_url }}">
+                                <img class="card-img-top" src="{{ im.url }}" alt="{{ product.name }}">
                             </a>
 
                             {% endthumbnail %}
