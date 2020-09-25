@@ -8,17 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 19:55+0000\n"
-"PO-Revision-Date: 2020-09-11 19:43+0000\n"
+"POT-Creation-Date: 2020-09-24 21:23+0000\n"
+"PO-Revision-Date: 2020-09-24 21:25+0000\n"
 "Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: apps.py:7
@@ -67,6 +65,11 @@ msgstr "Создать профиль"
 msgid "Please, sign up using the following form:"
 msgstr "Пожалуйста, зарегистрируйтесь, используя следующую форму:"
 
+#: templates/accounts/account/register.html:12
+#| msgid "Create an account"
+msgid "Create my account"
+msgstr "Создать профиль"
+
 #: templates/accounts/registration/logged_out.html:4
 #: templates/accounts/registration/logged_out.html:6
 msgid "Logged out"
@@ -104,15 +107,14 @@ msgid "Please, use the following form to log-in."
 msgstr "Пожалуйста, зарегистрируйтесь, используя следующую форму:"
 
 #: templates/accounts/registration/password_change_done.html:4
-#: templates/accounts/registration/password_change_done.html:7
+#: templates/accounts/registration/password_change_done.html:9
 msgid "Password changed"
 msgstr "Изменение пароля"
 
-#: templates/accounts/registration/password_change_done.html:8
+#: templates/accounts/registration/password_change_done.html:10
 msgid "Your password has been successfully changed."
 msgstr "Ваш пароль был успешно изменён"
 
-#: templates/accounts/registration/password_change_form.html:4
 #: templates/accounts/registration/password_change_form.html:7
 msgid "Change you password"
 msgstr "Изменить ваш пароль"
@@ -121,39 +123,43 @@ msgstr "Изменить ваш пароль"
 msgid "Use the form below to change your password."
 msgstr "Используя форму ниже измените ваш пароль"
 
+#: templates/accounts/registration/password_change_form.html:12
+msgid "Change"
+msgstr "Изменить"
+
 #: templates/accounts/registration/password_reset_complete.html:4
 msgid "Password reset"
 msgstr "Изменение пароля"
 
-#: templates/accounts/registration/password_reset_complete.html:7
+#: templates/accounts/registration/password_reset_complete.html:9
 msgid "Password set"
 msgstr "Изменение пароля"
 
-#: templates/accounts/registration/password_reset_complete.html:8
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "Your password has been set. You can"
 msgstr "Ваш пароль был установлен. Вы можете"
 
-#: templates/accounts/registration/password_reset_complete.html:8
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "log in now"
 msgstr "войти сейчас"
 
 #: templates/accounts/registration/password_reset_confirm.html:4
-#: templates/accounts/registration/password_reset_confirm.html:7
+#: templates/accounts/registration/password_reset_confirm.html:9
 #: templates/accounts/registration/password_reset_done.html:4
-#: templates/accounts/registration/password_reset_done.html:7
+#: templates/accounts/registration/password_reset_done.html:9
 #: templates/accounts/registration/password_reset_form.html:4
 msgid "Reset your password"
 msgstr "Сброс вашего пароля"
 
-#: templates/accounts/registration/password_reset_confirm.html:9
+#: templates/accounts/registration/password_reset_confirm.html:11
 msgid "Please enter your new password twice:"
 msgstr "Пожалуйста, введите ваш пароль дважды"
 
-#: templates/accounts/registration/password_reset_done.html:8
+#: templates/accounts/registration/password_reset_done.html:10
 msgid "We've emailed you instructions for setting your password."
 msgstr "Мы выслали вам инструкции для установки пароля"
 
-#: templates/accounts/registration/password_reset_done.html:9
+#: templates/accounts/registration/password_reset_done.html:11
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with."
@@ -161,24 +167,24 @@ msgstr ""
 "Если вы не получили email, пожалуйста убедитесь, что введённый адрес "
 "использовался для регистрации"
 
-#: templates/accounts/registration/password_reset_form.html:7
+#: templates/accounts/registration/password_reset_form.html:9
 msgid "Forgotten your password?"
 msgstr "Забыли ваш пароль?"
 
-#: templates/accounts/registration/password_reset_form.html:8
+#: templates/accounts/registration/password_reset_form.html:10
 msgid "Enter your e-mail address to obtain a new password."
 msgstr "Введите ваш e-mail адрес для получения новго пароля"
 
 #: templates/accounts/registration/register_done.html:4
-#: templates/accounts/registration/register_done.html:7
+#: templates/accounts/registration/register_done.html:9
 msgid "Welcome"
 msgstr "Добро пожаловать!"
 
-#: templates/accounts/registration/register_done.html:8
+#: templates/accounts/registration/register_done.html:10
 msgid "Your account has been successfully created. Now you can"
 msgstr "Ваш аккаунт успешно создан. Сейчас вы можете"
 
-#: templates/accounts/registration/register_done.html:8
+#: templates/accounts/registration/register_done.html:10
 msgid "log in"
 msgstr "войти"
 

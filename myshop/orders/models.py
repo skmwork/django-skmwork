@@ -9,9 +9,8 @@ from django.conf import settings
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='images_created', on_delete=models.CASCADE, null=False)
-    address = models.CharField(_('Address'), max_length=250)
-    postal_code = models.CharField(_('Postal code'), max_length=20)
-    city = models.CharField(_('City'), max_length=100)
+    address = models.CharField(_('Address'), max_length=250, null=True, blank=True)
+    comment = models.CharField(_('Comment'), max_length=250, null=True, blank=True)
     created = models.DateTimeField(_('Created'), auto_now_add=True)
     updated = models.DateTimeField(_('Updated'), auto_now=True)
     paid = models.BooleanField(_('Paid'), default=False)

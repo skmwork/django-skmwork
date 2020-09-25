@@ -1,4 +1,5 @@
-{% extends "shop/base.html" %}
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>{% extends "shop/base.html" %}
 {% load i18n %}
 {% load static %}
 {% block title %}
@@ -7,40 +8,33 @@
 {% block content %}
 
 
-<div class="container">
-    <div class="row">
 
-        <div class="col-12 col-md-2 col-lg-2">
-            <div>
-                <h3>{% trans "Categories" %}</h3>
-                <ul  class="nav flex-column">
-                    <li  class="nav-item" >
-                        <a class="nav-link{% if not category %} active{% endif %}" href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
-                    </li>
-                    {% for c in categories %}
-                    <li  class="nav-item">
-                        <a class="nav-link{% if category.slug == c.slug %} active{% endif %}" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
+    <div class="row">
+        <div class="col-12 col-sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="navbar-nav">
+                <a class="nav-link{% if not category %} active{% endif %}" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%%20url%20'shop:product_list'%20%%7D">{% trans "All" %}</a>
+                {% for c in categories %}
+                    <a class="nav-item nav-link{% if category.slug == c.slug %} active{% endif %}" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%7B%20c.get_absolute_url%20%7D%7D">{{ c.name }}</a>
+                {% endfor %}
             </div>
+        </nav>
         </div>
-        <div class="col-12 col-md-10 col-lg-10">
-            <div class="row">
-                <h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10">
             <div class="row">
             {% for product in products %}
-                    <div class="col-12 col-md-4 col-lg-4">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                         <div class="card border-0">
                             {% load thumbnail %}
                             {% thumbnail product.image "300" as im %}
-                            <a class="card-img-hover" href="{{ product.get_absolute_url }}">
-                                <img class="card-img-top" src="{{ im.url }}" alt="{{ product.name }}">
+                            <a class="card-img-hover" href="https://www.pythonanywhere.com/user/skmwork/files/home/skmwork/django-skmwork/myshop/shop/templates/shop/product/%7B%7B%20product.get_absolute_url%20%7D%7D">
+                                <img class="card-img-top" src="list_files/%2520im.html" alt="{{ product.name }}">
                             </a>
 
                             {% endthumbnail %}
-                            <br/>
+                            <br>
                             <div class="card-body">
                                 <div class="card-title font-weight-bold"><a>{{ product.name }}</a></div>
                                 <a class="card-text font-weight-bold text-muted">{{ product.price }} {% trans "rub" %}</a>
@@ -50,12 +44,11 @@
                     {% endfor %}
             </div>
             <div class="row  justify-content-center">
-                <div class="col col-md-4 col-lg-4" ></div>
-                <div class="col col-md-4 col-lg-4" >
+                <div class="col col-md-4 col-lg-4"></div>
+                <div class="col col-md-4 col-lg-4">
                     {% include "../pagination.html" with page=products %}
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+{% endblock %}</body></html>

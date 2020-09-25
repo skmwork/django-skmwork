@@ -80,10 +80,10 @@
 <row>
     <div class="col-12">
     <p class="text-right">
-        <button href="{% url 'shop:product_list' %}" type="button" class="btn btn-link">{% trans "Continue shopping" %}</button>
-        <button href="{% url 'orders:order_create' %}" class='btn btn-success'>
+        <a href="{% url 'shop:product_list' %}" type="button" class="btn btn-link">{% trans "Continue shopping" %}</a>
+        <a href="{% url 'orders:order_create' %}" class='btn btn-primary'>
             {% trans "Checkout" %} 
-        </button>
+        </a>
     </p></div></row>
 {% else %}
 <h1>{% trans "Your cart is empty" %}</h1>
