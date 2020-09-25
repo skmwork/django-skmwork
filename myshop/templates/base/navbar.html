@@ -42,7 +42,7 @@
         <a class="nav-link" href="{% url 'accounts:edit' %}">{% trans "User" %}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'accounts:logout' %}">{% trans "Logout" %}</a>
+        <a class="nav-link" href="{% url 'shop:logout' %}">{% trans "Logout" %}</a>
       </li>
       {% else %}
       <li class="nav-item {% if request.path == register_url %}active{% endif %}"><a class="nav-link" href="{% url 'accounts:register' %}">

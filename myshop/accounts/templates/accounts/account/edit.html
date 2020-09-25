@@ -1,11 +1,11 @@
-{% extends "shop/base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 
 {% block title %}{% trans "Edit your account" %}{% endblock %}
 
 {% block content %}
     <h1>{% trans "Edit your account" %}</h1>
-<p><a href='{% url "accounts:logout" %}'>{% trans "Logout" %}</a> | <a href='{% url "accounts:password_change" %}'>{% trans "Password-change" %}</a></p>
+<p><a href='{% url "shop:logout" %}'>{% trans "Logout" %}</a> | <a href='{% url "shop:password_change" %}'>{% trans "Password-change" %}</a></p>
     <p>{% trans "You can edit your account using the following form:" %}</p>
     <form action="." method="post" enctype="multipart/form-data">
         {{ user_form.as_p }}
