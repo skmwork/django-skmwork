@@ -7,19 +7,14 @@
 {% block content %}
 
 
-
-    <div class="row">
-        <div class="col-12 col-sm-12">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="navbar-nav">
-                <a class="nav-link{% if not category %} active{% endif %}" href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
-                {% for c in categories %}
-                    <a class="nav-item nav-link{% if category.slug == c.slug %} active{% endif %}" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                {% endfor %}
-            </div>
-        </nav>
-        </div>
-    </div>
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex">
+          <a class="p-2 {% if category %} text-muted{% else %} text-dark font-weight-bold{% endif %}" href="{% url 'shop:product_list' %}">{% trans "All" %}</a>
+            {% for c in categories %}
+                <a class="p-2 {% if category.slug != c.slug %} text-muted{% else %} text-dark font-weight-bold{% endif %}" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+            {% endfor %}
+    </nav>
+  </div>
     <div class="row">
         <div class="col-12 col-sm-12 col-md-10 col-lg-10">
             <div class="row">
@@ -41,12 +36,6 @@
                         </div>
                     </div>
                     {% endfor %}
-            </div>
-            <div class="row  justify-content-center">
-                <div class="col col-md-4 col-lg-4"></div>
-                <div class="col col-md-4 col-lg-4">
-                    {% include "pagination.html" with page=products %}
-                </div>
             </div>
         </div>
     </div>
