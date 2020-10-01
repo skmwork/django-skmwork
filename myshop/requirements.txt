@@ -4,3 +4,4 @@ django-rosetta
 pillow
 django-grappelli
 django-modeltranslation
+django-crispy-forms

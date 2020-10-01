@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block title %}{% trans "Edit your account" %}{% endblock %}
 
@@ -8,8 +9,8 @@
 <p><a href='{% url "logout" %}'>{% trans "Logout" %}</a> | <a href='{% url "password_change" %}'>{% trans "Password-change" %}</a></p>
     <p>{% trans "You can edit your account using the following form:" %}</p>
     <form action="." method="post" enctype="multipart/form-data">
-        {{ user_form.as_p }}
-        {{ profile_form.as_p }}
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
         {% csrf_token %}
         <p><button type='submit' class='btn btn-primary'>{% trans 'Save changes' %}</button>
     </form>

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'sorl.thumbnail',
     'rosetta',
+    'crispy_forms',
 
 ]
 
@@ -163,3 +164,4 @@ LOGOUT_URL = 'shop:logout'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
