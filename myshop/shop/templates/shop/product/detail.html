@@ -6,22 +6,22 @@
 {% endblock %}
 {% block content %}
     <div class='row'>
-        <div class='col-12 col-md-6'>
-    {% load thumbnail %}
-    {% thumbnail product.image "300" as im %}
-    <img src="{{ im.url }}" class="image-detail">
-    {% endthumbnail %}
-    <h1>{{ product.name }}</h1>
-    <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-    <p class="price">{{ product.price }} {% trans "rub" %}</p>
-    <form action="{% url 'cart:cart_add' product.id %}" method="post">
-
-            {{ cart_product_form }}
-            {% csrf_token %}
-            <button type='submit'  class='btn btn-sm btn-success'>{% trans 'Add to cart' %}</button>
-
-    </form>
-    {{ product.description|linebreaks }}
-</div>
-</div>
+        <div class='col-12 col-xs-6 col-md-6 col-lg-6'>
+            {% load thumbnail %}
+            {% thumbnail product.image "300" as im %}
+                <img src="{{ im.url }}" class="image-detail">
+            {% endthumbnail %}
+        </div>
+        <div class='col-12 col-xs-6 col-md-6 col-lg-6'>
+            <h5>{{ product.name }}</h5>
+            <a href="{{ product.category.get_absolute_url }}"><p class="text-muted">{{ product.category }}</p></a>
+            <p class="price">{{ product.price }} {% trans "rub" %}</p>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                    <button type='submit'  class='btn btn-sm btn-success'>{% trans 'Add to cart' %}</button>
+            </form>
+            <p>{{ product.description|linebreaks }}</p>
+        </div>
+    </div>
 {% endblock %}

@@ -30,8 +30,9 @@
                             {% endthumbnail %}
                             <br>
                             <div class="card-body">
-                                <div class="card-title font-weight-bold"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></div>
-                                <a class="card-text font-weight-bold text-muted" href="{{ product.get_absolute_url }}">{{ product.price }} {% trans "rub" %}</a>
+                                <div class="card-title"><a href="{{ product.get_absolute_url }}"><h5>{{ product.name }}</h5></a></div>
+                                <p></p>
+                                <small class="text-muted">{{ product.price }} {% trans "rub" %}</small>
                             </div>
                         </div>
                     </div>
