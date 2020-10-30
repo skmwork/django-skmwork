@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     {% trans "Checkout" %}
 {% endblock %}
 
 {% block content %}
+<div class='row'>
+    <div class='col-12'>
     <h1>{% trans "Checkout" %}</h1>
 
-    <div class="order-info">
+    <div>
         <h3>{% trans "Your order" %}</h3>
         <ul>
             {% for item in cart %}
@@ -25,10 +28,16 @@
         </ul>
         <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} {% trans "rub" %}</p>
     </div>
-
+</div>
+    </div>
+    <div class='row'>
+    <div class='col-4'>
     <form action="." method="post" class="order-form">
-        {{ form.as_p }}
-        <p><input type="submit" value="{% trans "Place order" %}"></p>
+        {{ form|crispy }}
+        <button type='submit'  class='btn btn-sm btn-success'>{% trans "Place order" %}</button>
         {% csrf_token %}
     </form>
+    </div>
+</div>
+
 {% endblock %}
