@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block title %}
 	{% trans "Your shopping cart" %}
@@ -72,10 +73,11 @@
 <row>
      <div class="col-12 mb-4">
 
-    <form class="form-inline" action="{% url 'coupons:apply' %}" method="post">
-    {{ coupon_apply_form }}
-        <button type="submit" class="btn btn-success btn-light btn-sm">{% trans 'Apply' %}</button>
+    <form class="form" action="{% url 'coupons:apply' %}" method="post">
+    {{ coupon_apply_form|crispy }}
+
     {% csrf_token %}
+        <button type="submit" class="btn btn-primary">{% trans 'Apply' %}</button>
     </form>
              </div>
 
@@ -84,7 +86,7 @@
     <div class="col-12">
     <p class="text-right">
         <a href="{% url 'shop:product_list' %}" type="button" class="btn btn-link">{% trans "Continue shopping" %}</a>
-        <a href="{% url 'orders:order_create' %}" class='btn btn-primary'>
+        <a href="{% url 'orders:order_create' %}" class='btn btn-success'>
             {% trans "Checkout" %}
         </a>
     </p></div></row>

@@ -27,12 +27,13 @@
                         <h5>{{ product.name }}</h5>
                         <a href="{{ product.category.get_absolute_url }}"><p class="text-muted">{{ product.category }}</p></a>
                         <p class="price">{{ product.price }} {% trans "rub" %}</p>
+                        <p>{{ product.description|linebreaks }}</p>
                         <form action="{% url 'cart:cart_add' product.id %}" method="post">
                                 {{ cart_product_form|crispy }}
                                 {% csrf_token %}
                                 <button type='submit'  class='btn btn-sm btn-success'>{% trans 'Add to cart' %}</button>
                         </form>
-                        <p>{{ product.description|linebreaks }}</p>
+
                     </div>
                 </div>
             </div>
