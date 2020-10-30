@@ -159,8 +159,8 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                            ]
 
 LOGIN_REDIRECT_URL = 'shop:product_list'
-LOGIN_URL = 'shop:login'
-LOGOUT_URL = 'shop:logout'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 

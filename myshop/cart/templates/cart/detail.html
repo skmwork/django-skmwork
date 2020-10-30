@@ -2,70 +2,73 @@
 {% load i18n %}
 {% load static %}
 {% block title %}
-	{% trans "Your shopping cart" %}    
+	{% trans "Your shopping cart" %}
 {% endblock %}
 {% block content %}
 {% if cart %}
 <row>
     <div class="col-12 mb-4">
     <h1>{% trans "Your shopping cart" %}</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">{% trans "Image" %} </th>
-            <th scope="col">{% trans "Product" %} </th>
-            <th scope="col">{% trans "Quantity" %} </th>
-            <th scope="col">{% trans "Remove" %} </th>
-            <th scope="col">{% trans "Unit price" %} </th>
-            <th scope="col">{% trans "Price" %} </th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in cart %}
-            {% with product=item.product %}
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>
-						{% load thumbnail %}
-						{% thumbnail product.image "150" as im %}
-							 <img src="{{ im.url }}" class="image-detail">
-						{% endthumbnail %}
-                    </td>
-                    <td>{{ product.name }}</td>
-                    <td>{{ item.quantity }}</td>
-                    <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %} </a></td>
-                    <td class="num">{{ item.price }}  {% trans "rub" %}</td>
-                    <td class="num">{{ item.total_price }}  {% trans "rub" %}</td>
+                    <th scope="col">{% trans "Image" %} </th>
+                    <th scope="col">{% trans "Product" %} </th>
+                    <th scope="col">{% trans "Quantity" %} </th>
+                    <th scope="col">{% trans "Remove" %} </th>
+                    <th scope="col">{% trans "Unit price" %} </th>
+                    <th scope="col">{% trans "Price" %} </th>
                 </tr>
-            {% endwith %}
-        {% endfor %}
-        {% if cart.coupon %}
-            <tr class="subtotal">
-                <td>{% trans "Subtotal" %}</td>
-                <td colspan="4"></td>
-                <td class="num">{{ cart.get_total_price }}  {% trans "rub" %}</td>
-            </tr>
-            <tr>
-                <td>
-                    {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
-                        "{{ code }}" ({{ discount }}% off)
-                    {% endblocktrans %}
-                </td>
-                <td colspan="4"></td>
-                <td class="num neg">
-                    - {{ cart.get_discount|floatformat:"2" }}  {% trans "rub" %}
-                </td>
-            </tr>
-        {% endif %}
-        <tr class="total">
-            <td>{% trans "Total" %}</td>
-            <td colspan="4"></td>
-            <td class="num">
-                {{ cart.get_total_price_after_discount|floatformat:"2" }}  {% trans "rub" %}
-            </td>
-        </tr>
-        </tbody>
-    </table></div>
-    </row>
+                </thead>
+                <tbody>
+                {% for item in cart %}
+                    {% with product=item.product %}
+                        <tr>
+                            <td>
+        						{% load thumbnail %}
+        						{% thumbnail product.image "150" as im %}
+        							 <img src="{{ im.url }}" class="image-detail">
+        						{% endthumbnail %}
+                            </td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %} </a></td>
+                            <td class="num">{{ item.price }}  {% trans "rub" %}</td>
+                            <td class="num">{{ item.total_price }}  {% trans "rub" %}</td>
+                        </tr>
+                    {% endwith %}
+                {% endfor %}
+                {% if cart.coupon %}
+                    <tr class="subtotal">
+                        <td>{% trans "Subtotal" %}</td>
+                        <td colspan="4"></td>
+                        <td class="num">{{ cart.get_total_price }}  {% trans "rub" %}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
+                                "{{ code }}" ({{ discount }}% off)
+                            {% endblocktrans %}
+                        </td>
+                        <td colspan="4"></td>
+                        <td class="num neg">
+                            - {{ cart.get_discount|floatformat:"2" }}  {% trans "rub" %}
+                        </td>
+                    </tr>
+                {% endif %}
+                <tr class="total">
+                    <td>{% trans "Total" %}</td>
+                    <td colspan="4"></td>
+                    <td class="num">
+                        {{ cart.get_total_price_after_discount|floatformat:"2" }}  {% trans "rub" %}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</row>
 <row>
      <div class="col-12 mb-4">
 
@@ -82,7 +85,7 @@
     <p class="text-right">
         <a href="{% url 'shop:product_list' %}" type="button" class="btn btn-link">{% trans "Continue shopping" %}</a>
         <a href="{% url 'orders:order_create' %}" class='btn btn-primary'>
-            {% trans "Checkout" %} 
+            {% trans "Checkout" %}
         </a>
     </p></div></row>
 {% else %}
