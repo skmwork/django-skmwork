@@ -12,11 +12,7 @@
     <form action="." method="post">
         {{ user_form|crispy }}
         {% csrf_token %}
-                <div class="row justify-content-center">
-    <div class="col-4">
         <button type='submit' class='btn btn-primary'>{% trans 'Create my account' %}</button>
-    </div>
-                </div>
     </form>
     </div>
 </row>

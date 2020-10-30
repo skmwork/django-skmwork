@@ -21,11 +21,7 @@
         {{ user_form|crispy }}
         {{ profile_form|crispy }}
         {% csrf_token %}
-                 <div class="row justify-content-center">
-    <div class="col-3">
         <button type='submit' class='btn btn-primary'>{% trans 'Save' %}</button>
-    </div>
-                 </div>
     </form>
         </div>
     </div>
