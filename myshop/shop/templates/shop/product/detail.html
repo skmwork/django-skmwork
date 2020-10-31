@@ -25,11 +25,9 @@
                 <div class="p-2 flex-grow-1">
                     <div class="col-12 col-xs-12 col-md-6 col-lg-6">
                         <h5>{{ product.name }}</h5>
-                        <h5>{{ product.name }}</h5>
                         <a href="{{ product.category.get_absolute_url }}"><p class="text-muted">{{ product.category }}</p></a>
                         <p class="price">{{ product.price }} {% trans "rub" %}</p>
                         <p>{{ product.description|linebreaks }}</p>
-
                     </div>
                     <div class="col-6 col-xs-6 col-md-4 col-lg-4">
                         <form class="form" action="{% url 'cart:cart_add' product.id %}" method="post">
