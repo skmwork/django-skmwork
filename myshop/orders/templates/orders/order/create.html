@@ -29,14 +29,14 @@
         <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} {% trans "rub" %}</p>
     </div>
 </div>
-    </div>
-    <div class='row'>
+</div>
+<div class='row'>
     <div class='col-4'>
-    <form action="." method="post" class="order-form">
-        {{ form|crispy }}
-        <button type='submit'  class='btn btn-sm btn-success'>{% trans "Place order" %}</button>
-        {% csrf_token %}
-    </form>
+        <form action="." method="post" class="form">
+            {{ form|crispy }}
+            <button type='submit' class='btn btn-sm btn-success'>{% trans "Place order" %}</button>
+            {% csrf_token %}
+        </form>
     </div>
 </div>
 
