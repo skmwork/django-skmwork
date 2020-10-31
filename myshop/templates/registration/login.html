@@ -11,14 +11,13 @@
           <form method="post" novalidate>
             {% csrf_token %}
             {{ form|crispy }}
-            <div class="d-flex">
-              <div class="p-2"><a href="{% url 'password_reset' %}" class="btn btn-link">{% trans "Forgotten your password?" %}</a></div>
-              <div class="p-2"><a href="{% url 'accounts:register' %}" class="btn btn-link">{% trans "Registration" %}</a></div>
-              <div class="ml-auto p-2"><button type="submit" class="btn btn-primary">{% trans "Log in" %}</button></div>
-            </div>
+              <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
           </form>
 
-
+        </div>
+        <div class="card-body">
+            <a href="{% url 'password_reset' %}" class="btn btn-link">{% trans "Forgotten your password?" %}</a>
+            <a href="{% url 'accounts:register' %}" class="btn btn-link">{% trans "Registration" %}</a>
         </div>
       </div>
     </div>

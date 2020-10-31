@@ -30,7 +30,7 @@
 
 
                         <form class="form-inline" action="{% url 'cart:cart_add' product.id %}" method="post">
-                            {{ cart_product_form|crispy }}
+                            {{ cart_product_form }}
                             <button type='submit'  class='btn btn-sm btn-success ml-2'>{% trans 'Add to cart' %}</button>
                             {% csrf_token %}
                         </form>
