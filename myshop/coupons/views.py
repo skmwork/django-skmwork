@@ -3,6 +3,8 @@ from django.views.decorators.http import require_POST
 from django.utils import timezone
 from .models import Coupon
 from .forms import CouponApplyForm
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 
 @require_POST
@@ -17,6 +19,8 @@ def coupon_apply(request):
                                         valid_to__gte=now,
                                         active=True)
             request.session['coupon_id'] = coupon.id
+            messages.success(request, _('Coupon was applied successfully'))
         except Coupon.DoesNotExist:
             request.session['coupon_id'] = None
+            messages.error(request, _('Error applying coupon'))
     return redirect('cart:cart_detail')
