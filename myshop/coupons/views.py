@@ -22,5 +22,5 @@ def coupon_apply(request):
             messages.success(request, _('Coupon was applied successfully'))
         except Coupon.DoesNotExist:
             request.session['coupon_id'] = None
-            messages.error(request, _('Error applying coupon'))
+            messages.error(request, _("Coupon wasn't found"))
     return redirect('cart:cart_detail')
