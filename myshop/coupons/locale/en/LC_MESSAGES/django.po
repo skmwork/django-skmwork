@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-21 00:20-0700\n"
+"POT-Creation-Date: 2020-11-02 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,4 +44,12 @@ msgstr ""
 
 #: models.py:11
 msgid "Active"
+msgstr ""
+
+#: views.py:22
+msgid "Coupon was applied successfully"
+msgstr ""
+
+#: views.py:25
+msgid "Coupon wasn't found"
 msgstr ""
