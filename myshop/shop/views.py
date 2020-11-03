@@ -18,9 +18,10 @@ def product_list(request, category_slug=None):
                    'products': products_list})
 
 
-def product_detail(request, id, slug):
+def product_detail(request, category_slug, slug):
+    category = get_object_or_404(Category, slug=category_slug)
     product = get_object_or_404(Product,
-                                id=id,
+                                category_id=category.id,
                                 slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
