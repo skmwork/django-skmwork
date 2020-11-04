@@ -14,18 +14,18 @@
         <h4>{% trans "Your order" %}</h4>
         <ul>
             {% for item in cart %}
-                <li>{{ item.product.name }} ({{ item.quantity }}) <span>{{ item.total_price }} {% trans "rub" %}</span></li>
+                <li>{{ item.product.name }} ({{ item.quantity }}) <span>{{ item.total_price }} ₽</span></li>
             {% endfor %}
             {% if cart.coupon %}
                 <li>
                     {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
                         "{{ code }}" ({{ discount }}% off)
                     {% endblocktrans %}
-                    <span>- {{ cart.get_discount|floatformat:"2" }} {% trans "rub" %}</span>
+                    <span>- {{ cart.get_discount|floatformat:"2" }} ₽</span>
                 </li>
             {% endif %}
         </ul>
-        <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} {% trans "rub" %}</p>
+        <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</p>
     <form action="." method="post" class="form">
         {{ form|crispy }}
         <button type='submit' class='btn btn-lg btn-block btn-success'>{% trans "Place order" %}</button>

@@ -51,7 +51,7 @@
         <div class="col-12 mt-2 ">
             <div class="d-flex">
                 <div class="p-2">{% trans "Subtotal" %}</div>
-                <div class="p-2 ml-auto">{{ cart.get_total_price }}  {% trans "rub" %}</div>
+                <div class="p-2 ml-auto">{{ cart.get_total_price }} ₽</div>
             </div>
         </div>
         <div class="col-12 mt-2 ">
@@ -59,20 +59,20 @@
                 {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
                     <div class="p-2">"{{ code }}" ({{ discount }}% off)</div>
                 {% endblocktrans %}
-                <div class="p-2 ml-auto">- {{ cart.get_discount|floatformat:"2" }}  {% trans "rub" %}</div>
+                <div class="p-2 ml-auto">- {{ cart.get_discount|floatformat:"2" }} ₽</div>
             </div>
         </div>
         {% endif %}
           <div class="col-12 mt-2 ">
               <div class="d-flex">
                   <div class="p-2">{% trans "Total" %}</div>
-                    <div class="p-2 ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }}  {% trans "rub" %}</div>
+                    <div class="p-2 ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</div>
               </div>
           </div>
 
         <div class="col-12 mt-2 mb-2">
             <p class="text-right">
-                <a href="{% url 'orders:order_create' %}" class='btn btn-lg btn-block btn-success ml-2'>
+                <a href="{% url 'orders:order_create' %}" class='btn btn-lg btn-block btn-primary ml-2'>
                     {% trans "Checkout" %}
                 </a>
         </p>
