@@ -8,14 +8,13 @@
 
 {% block content %}
 <div class='row'>
-    <div class='col-12'>
+    <div class='col-12 col-xs-4 col-md-4 col-lg-4'>
+        <div class="card"><div class="card-body">
     <h3>{% trans "Checkout" %}</h3>
-
-    <div>
         <h4>{% trans "Your order" %}</h4>
         <ul>
             {% for item in cart %}
-                <li>{{ item.quantity }}x {{ item.product.name }} <span>{{ item.total_price }} {% trans "rub" %}</span></li>
+                <li>{{ item.product.name }} ({{ item.quantity }}) <span>{{ item.total_price }} {% trans "rub" %}</span></li>
             {% endfor %}
             {% if cart.coupon %}
                 <li>
@@ -27,17 +26,13 @@
             {% endif %}
         </ul>
         <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} {% trans "rub" %}</p>
-    </div>
+    <form action="." method="post" class="form">
+        {{ form|crispy }}
+        <button type='submit' class='btn btn-lg btn-block btn-success'>{% trans "Place order" %}</button>
+        {% csrf_token %}
+    </form>
+            </div></div>
 </div>
-</div>
-<div class='row'>
-    <div class='col-12 col-xs-8 col-md-6 col-lg-4'>
-        <form action="." method="post" class="form">
-            {{ form|crispy }}
-            <button type='submit' class='btn btn-sm btn-success'>{% trans "Place order" %}</button>
-            {% csrf_token %}
-        </form>
-    </div>
 </div>
 
 {% endblock %}

@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-03 08:51+0000\n"
-"PO-Revision-Date: 2020-11-03 08:52+0000\n"
-"Last-Translator: b'  <skmwork@yandex.ru>'\n"
+"PO-Revision-Date: 2020-11-03 23:04+0000\n"
+"Last-Translator: b'kostya 123 <adin@admin.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,6 @@ msgid "log-in again"
 msgstr "войти снова"
 
 #: templates/registration/login.html:10 templates/registration/login.html:18
-#, fuzzy
 #| msgid "log in"
 msgid "Log in"
 msgstr "войти"
@@ -147,7 +146,6 @@ msgid "Please enter your new password twice:"
 msgstr "Пожалуйста, введите ваш пароль дважды"
 
 #: templates/registration/password_reset_confirm.html:15
-#, fuzzy
 #| msgid "Change you password"
 msgid "Change my password"
 msgstr "Изменить ваш пароль"
