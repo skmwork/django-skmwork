@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-21 00:19-0700\n"
-"PO-Revision-Date: 2020-05-21 09:30+0000\n"
-"Last-Translator: b'  <ya@ya.ru>'\n"
+"POT-Creation-Date: 2020-11-04 21:29+0000\n"
+"PO-Revision-Date: 2020-11-04 21:29+0000\n"
+"Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,83 +19,63 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: apps.py:7 models.py:31
+#: apps.py:7 models.py:29
 msgid "Orders"
 msgstr "Заказы"
 
-#: models.py:10
-msgid "First name"
-msgstr "Имя"
-
-#: models.py:11
-msgid "Last name"
-msgstr "Фамилия"
-
 #: models.py:12
-msgid "Email"
-msgstr "Электронная почта"
-
-#: models.py:13
 msgid "Address"
 msgstr "Адрес"
 
+#: models.py:13
+msgid "Comment"
+msgstr "Комментарий"
+
 #: models.py:14
-msgid "Postal code"
-msgstr "Почтовый код"
-
-#: models.py:15
-msgid "City"
-msgstr "Город"
-
-#: models.py:16
 msgid "Created"
 msgstr "Создан"
 
-#: models.py:17
+#: models.py:15
 msgid "Updated"
 msgstr "Обновлён"
 
-#: models.py:18
+#: models.py:16
 msgid "Paid"
 msgstr "Оплачен"
 
-#: models.py:24
+#: models.py:22
 msgid "Discount"
 msgstr "Скидка"
 
-#: models.py:30
+#: models.py:28
 msgid "Order"
 msgstr "Заказ"
 
-#: models.py:44
+#: models.py:42
 msgid "Price"
 msgstr "Цена"
 
-#: models.py:45
+#: models.py:43
 msgid "Quantity"
 msgstr "Количество"
 
-#: models.py:54
+#: models.py:52
 msgid "Order item"
 msgstr "Продукты в заказе"
 
-#: models.py:55
+#: models.py:53
 msgid "Order items"
 msgstr "Продукт в заказе"
 
-#: templates/orders/order/create.html:5 templates/orders/order/create.html:9
+#: templates/orders/order/create.html:6 templates/orders/order/create.html:13
 msgid "Checkout"
 msgstr "Оформить заказ"
 
-#: templates/orders/order/create.html:12
+#: templates/orders/order/create.html:14
 msgid "Your order"
 msgstr "Ваш заказ"
 
-#: templates/orders/order/create.html:15
-msgid "rub"
-msgstr "руб."
-
-#: templates/orders/order/create.html:19
+#: templates/orders/order/create.html:21
 #, python-format
 msgid ""
 "\n"
@@ -105,7 +85,7 @@ msgstr ""
 "\n"
 "\"%(code)s\" (%(discount)s%% скидка)"
 
-#: templates/orders/order/create.html:26
+#: templates/orders/order/create.html:28
 msgid "Total"
 msgstr "Итого"
 
@@ -120,3 +100,21 @@ msgstr "Спасибо!"
 #: templates/orders/order/created.html:8
 msgid "Your order has been successfully completed. Your order number is"
 msgstr "Ваш заказ успешно зарегистрирован. Номер заказа "
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "Last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "Email"
+#~ msgstr "Электронная почта"
+
+#~ msgid "Postal code"
+#~ msgstr "Почтовый код"
+
+#~ msgid "City"
+#~ msgstr "Город"
+
+#~ msgid "rub"
+#~ msgstr "руб."

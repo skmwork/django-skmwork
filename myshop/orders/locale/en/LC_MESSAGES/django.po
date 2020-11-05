@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-21 00:19-0700\n"
+"POT-Creation-Date: 2020-11-04 21:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,83 +18,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:7 models.py:31
+#: apps.py:7 models.py:29
 msgid "Orders"
 msgstr ""
 
-#: models.py:10
-msgid "First name"
-msgstr ""
-
-#: models.py:11
-msgid "Last name"
-msgstr ""
-
 #: models.py:12
-msgid "Email"
-msgstr ""
-
-#: models.py:13
 msgid "Address"
 msgstr ""
 
+#: models.py:13
+msgid "Comment"
+msgstr ""
+
 #: models.py:14
-msgid "Postal code"
-msgstr ""
-
-#: models.py:15
-msgid "City"
-msgstr ""
-
-#: models.py:16
 msgid "Created"
 msgstr ""
 
-#: models.py:17
+#: models.py:15
 msgid "Updated"
 msgstr ""
 
-#: models.py:18
+#: models.py:16
 msgid "Paid"
 msgstr ""
 
-#: models.py:24
+#: models.py:22
 msgid "Discount"
 msgstr ""
 
-#: models.py:30
+#: models.py:28
 msgid "Order"
 msgstr ""
 
-#: models.py:44
+#: models.py:42
 msgid "Price"
 msgstr ""
 
-#: models.py:45
+#: models.py:43
 msgid "Quantity"
 msgstr ""
 
-#: models.py:54
+#: models.py:52
 msgid "Order item"
 msgstr ""
 
-#: models.py:55
+#: models.py:53
 msgid "Order items"
 msgstr ""
 
-#: templates/orders/order/create.html:5 templates/orders/order/create.html:9
+#: templates/orders/order/create.html:6 templates/orders/order/create.html:13
 msgid "Checkout"
 msgstr ""
 
-#: templates/orders/order/create.html:12
+#: templates/orders/order/create.html:14
 msgid "Your order"
 msgstr ""
 
-#: templates/orders/order/create.html:15
-msgid "rub"
-msgstr ""
-
-#: templates/orders/order/create.html:19
+#: templates/orders/order/create.html:21
 #, python-format
 msgid ""
 "\n"
@@ -102,7 +82,7 @@ msgid ""
 "                    "
 msgstr ""
 
-#: templates/orders/order/create.html:26
+#: templates/orders/order/create.html:28
 msgid "Total"
 msgstr ""
 

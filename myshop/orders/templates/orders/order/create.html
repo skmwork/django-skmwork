@@ -8,25 +8,32 @@
 
 {% block content %}
 <div class='row'>
-    <div class='col-12 col-xs-4 col-md-4 col-lg-4'>
+    <div class='col-12 col-xs-6 col-md-6 col-lg-4 mx-auto'>
         <div class="card"><div class="card-body">
-    <h3>{% trans "Checkout" %}</h3>
-        <h5>{% trans "Your order" %}</h5>
-        <ul>
+           <p><h3>{% trans "Checkout" %}</h3></p>
+           <p><h5>{% trans "Your order" %}</h5></p>
             {% for item in cart %}
-                <li>{{ item.product.name }} ({{ item.quantity }}) <span>{{ item.total_price }} ₽</span></li>
+                <div class="d-flex mt-2">
+                    <div class="p">{{ item.product.name }} ({{ item.quantity }}):</div>
+                    <div class="p ml-auto">{{ item.total_price }} ₽</div>
+                </div>
+
             {% endfor %}
             {% if cart.coupon %}
-                <li>
-                    {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
-                        "{{ code }}" ({{ discount }}% off)
-                    {% endblocktrans %}
-                    <span>- {{ cart.get_discount|floatformat:"2" }} ₽</span>
-                </li>
+            {% with code=cart.coupon.code discount=cart.coupon.discount %}
+            <div class="d-flex mt-2">
+                <div class="p">{% trans "Discount" %} {{ discount }}% ("{{ code }}"):</div>
+                <div class="p ml-auto">-{{ cart.get_discount|floatformat:"2" }} ₽</div>
+            </div>
+            {% endwith %}
             {% endif %}
-        </ul>
-        <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</p>
-    <form action="." method="post" class="form">
+            <br/>
+            <div class="d-flex mt-2">
+                <div class="p">{% trans "Total" %}:</div>
+                <div class="p ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</div>
+                </div>
+
+    <form action="." method="post" class="form mt-2">
         {{ form|crispy }}
         <button type='submit' class='btn btn-lg btn-block btn-success'>{% trans "Place order" %}</button>
         {% csrf_token %}
