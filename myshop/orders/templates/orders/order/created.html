@@ -4,7 +4,9 @@
 {% block title %}{% trans "Thank you" %}{% endblock %}
 
 {% block content %}
-    <h3>{% trans "Thank you" %}</h3>
-    <p>{% trans "Your order has been successfully completed. Your order number is" %}
-        <strong>{{ order.id }}</strong>.</p>
+<h3>{% trans "Thank you" %}</h3>
+<p>
+    {% trans "Your order has been successfully completed. Your order number is" %}
+    <strong>{{ order.id }}</strong>.
+</p>
 {% endblock %}

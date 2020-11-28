@@ -6,41 +6,35 @@
 {% if category %}{{ category.title }}{% else %}Products{% endif %}
 {% endblock %}
 {% block content %}
-    <div class='row'>
-
-        <div class='col-12 col-xs-8 col-md-8 col-lg-5'>
-
-                    <div class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                    	    {% load thumbnail %}
-                            {% thumbnail product.image "300" as im %}
-                                <img src="{{ im.url }}"  class="d-block w-100">
-                            {% endthumbnail %}
-                        </div>
-                      </div>
-                    </div>
-        </div>
-        <div class='col-12 col-xs-4 col-md-4 col-lg-7 mt-2'>
-
-                    <h5>{{ product.name }}</h5>
-                    <a href="{{ product.category.get_absolute_url }}"><p class="text-muted">{{ product.category }}</p></a>
-                    <p class="price">{{ product.price }} ₽</p>
-                    <p>{{ product.description|linebreaks }}</p>
-                        <form class="form" action="{% url 'cart:cart_add' product.id %}" method="post">
-                             <div class="form-group row">
-                                <div class="col-12 col-xs-8 col-md-6 col-lg-6">
-                                    {{ cart_product_form | crispy }}
-                                    {% csrf_token %}
-                                </div>
-                              </div>
-
-                            <button type='submit'  class='btn btn-primary'>{% trans 'Add to cart' %}</button>
-
-                        </form>
-
-
+<div class='row'>
+    <div class='col-12 col-xs-8 col-md-8 col-lg-5'>
+        <div class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    {% load thumbnail %}
+                    {% thumbnail product.image "300" as im %}
+                    <img src="{{ im.url }}" class="d-block w-100">
+                    {% endthumbnail %}
+                </div>
             </div>
         </div>
+    </div>
+    <div class='col-12 col-xs-4 col-md-4 col-lg-7 mt-2'>
+
+        <h5>{{ product.name }}</h5>
+        <a href="{{ product.category.get_absolute_url }}"><p class="text-muted">{{ product.category }}</p></a>
+        <p class="price">{{ product.price }} ₽</p>
+        <p>{{ product.description|linebreaks }}</p>
+        <form class="form" action="{% url 'cart:cart_add' product.id %}" method="post">
+            <div class="form-group row">
+                <div class="col-12 col-xs-8 col-md-6 col-lg-6">
+                    {{ cart_product_form | crispy }}
+                    {% csrf_token %}
+                </div>
+            </div>
+            <button type='submit' class='btn btn-primary'>{% trans 'Add to cart' %}</button>
+        </form>
+    </div>
+</div>
     </div>
 {% endblock %}

@@ -7,3 +7,5 @@ cache/
 admin/
 grappelli/
 modeltranslation/
+.vs/
+myshop/env/

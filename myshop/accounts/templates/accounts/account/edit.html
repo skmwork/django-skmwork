@@ -6,20 +6,18 @@
 
 {% block content %}
 <div class="row">
-    </div><div class="row">
-<div class="col-12 col-xs-12 col-md-8 col-md-8 mx-auto">
+</div><div class="row">
+    <div class="col-12 col-xs-12 col-md-8 col-md-8 mx-auto">
         <h3>{% trans "Edit your account" %}</h3>
-    <a href='{% url "logout" %}' class="btn btn-link">{% trans "Logout" %}</a>
-<a class="btn btn-link" href='{% url "password_change" %}'>{% trans "Password-change" %}</a></p>
-    <p>{% trans "You can edit your account using the following form:" %}</p>
-    <form action="." method="post" enctype="multipart/form-data">
-        {{ user_form|crispy }}
-        {{ profile_form|crispy }}
-        {% csrf_token %}
-        <button type='submit' class='btn btn-primary'>{% trans 'Save' %}</button>
-    </form>
-        </div>
+        <a href='{% url "logout" %}' class="btn btn-link">{% trans "Logout" %}</a>
+        <a class="btn btn-link" href='{% url "password_change" %}'>{% trans "Password-change" %}</a></p>
+        <p>{% trans "You can edit your account using the following form:" %}</p>
+        <form action="." method="post" enctype="multipart/form-data">
+            {{ user_form|crispy }}
+            {{ profile_form|crispy }}
+            {% csrf_token %}
+            <button type='submit' class='btn btn-primary'>{% trans 'Save' %}</button>
+        </form>
     </div>
-
-
+</div>
 {% endblock %}

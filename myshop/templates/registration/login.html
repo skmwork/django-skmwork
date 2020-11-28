@@ -3,30 +3,29 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="row">
+<div class="row">
     <div class="col-12 col-xs-8 col-md-8 col-lg-6 mx-auto">
-      <div class="card">
-        <div class="card-body">
-          <h3>{% trans "Log in" %}</h3>
-          <form method="post" novalidate>
-            {% csrf_token %}
-            {{ form|crispy }}
+        <div class="card">
+            <div class="card-body">
+                <h3>{% trans "Log in" %}</h3>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="d-flex">
+                        <div class="p-2"><a href="{% url 'password_reset' %}" class="btn btn-link">{% trans "Forgotten your password?" %}</a></div>
+                        <div class="p-2"><a href="{% url 'accounts:register' %}" class="btn btn-link">{% trans "Registration" %}</a></div>
+                        <div class="ml-auto p-2"><button type="submit" class="btn btn-primary">{% trans "Log in" %}</button></div>
+                    </div>
+                </form>
 
-            <div class="d-flex">
-              <div class="p-2"><a href="{% url 'password_reset' %}" class="btn btn-link">{% trans "Forgotten your password?" %}</a></div>
-              <div class="p-2"><a href="{% url 'accounts:register' %}" class="btn btn-link">{% trans "Registration" %}</a></div>
-              <div class="ml-auto p-2"><button type="submit" class="btn btn-primary">{% trans "Log in" %}</button></div>
             </div>
-          </form>
+        </div>
+        <div class="col-12">
 
-      </div>
+        </div>
+        <div class="col-12">
+
+        </div>
     </div>
-  <div class="col-12">
-
-    </div>
-  <div class="col-12">
-
-  </div>
-      </div>
-  </div>
+</div>
 {% endblock %}

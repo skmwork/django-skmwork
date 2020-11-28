@@ -2,98 +2,97 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load static %}
+
 {% block title %}
 	{% trans "Your shopping cart" %}
 {% endblock %}
+
 {% block content %}
 {% if cart %}
 <div class="row">
     <div class="col-12">
-    <h3>{% trans "Your shopping cart" %}</h3>
+        <h3>{% trans "Your shopping cart" %}</h3>
     </div>
 </div>
 <div class="row">
-            <div class="col-12 col-xs-6 col-md-6 col-lg-8">
-                {% for item in cart %}
-                <div class="row mt-3">
-                    {% with product=item.product %}
-                        <div class="col-6 col-xs-6 col-md-6 col-lg-2">
-                            {% load thumbnail %}
-                            {% thumbnail product.image "150" as im %}
-                                 <a class="card-img-hover" href="{{ product.get_absolute_url }}"><img class="d-block w-100" src="{{ im.url }}"></a>
-                            {% endthumbnail %}
-                        </div>
-                        <div class="col-6 col-xs-6 col-md-6 col-lg-10">
-                        <div class="row">
-                            <div class="col-12 col-xs-12 col-md-12 col-lg-4">
-                                <p class="text">{{ product.name }}</p>
-                            </div>
-                            <div class="col-12 col-xs-12 col-md-12 col-lg-4">
-                                <p class="text">{{ item.price }} ₽ * {{ item.quantity }}</p>
-                            </div>
-                            <div class="col-12 col-xs-12 col-md-12 col-lg-4">
-                                <p class="text">{{ item.total_price }} ₽</p>
-                                <p class="text"><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %} </a></p>
-                            </div>
-                        </div>
-                    {% endwith %}
+    <div class="col-12 col-xs-6 col-md-6 col-lg-8">
+        {% for item in cart %}
+        <div class="row mt-3">
+            {% with product=item.product %}
+            <div class="col-6 col-xs-6 col-md-6 col-lg-2">
+                {% load thumbnail %}
+                {% thumbnail product.image "150" as im %}
+                <a class="card-img-hover" href="{{ product.get_absolute_url }}"><img class="d-block w-100" src="{{ im.url }}"></a>
+                {% endthumbnail %}
+            </div>
+            <div class="col-6 col-xs-6 col-md-6 col-lg-10">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-md-12 col-lg-4">
+                        <p class="text">{{ product.name }}</p>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="col-12 col-xs-6 col-md-6 col-lg-4 mt-2">
-                <div class="card">
-                    <div class="card-body">
-                {% if cart.coupon %}
-            <div class="col-12 mt-2 ">
-                <div class="d-flex">
-                    <div class="p">{% trans "Subtotal" %}:</div>
-                    <div class="p ml-auto">{{ cart.get_total_price }} ₽</div>
-                </div>
-            </div>
-            <div class="col-12 mt-2 ">
-                {% with code=cart.coupon.code discount=cart.coupon.discount %}
-                <div class="d-flex">
-                    <div class="p">{% trans "Discount" %} ({{ discount }}% ("{{ code }}"):</div>
-                    <div class="p ml-auto">-{{ cart.get_discount|floatformat:"2" }} ₽</div>
+                    <div class="col-12 col-xs-12 col-md-12 col-lg-4">
+                        <p class="text">{{ item.price }} ₽ * {{ item.quantity }}</p>
+                    </div>
+                    <div class="col-12 col-xs-12 col-md-12 col-lg-4">
+                        <p class="text">{{ item.total_price }} ₽</p>
+                        <p class="text"><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %} </a></p>
+                    </div>
                 </div>
                 {% endwith %}
             </div>
-            {% endif %}
-            <div class="col-12 mt-2 ">
-              <div class="d-flex">
-                <div class="p">{% trans "Total" %}:</div>
-                <div class="p ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</div>
-              </div>
-            </div>
-            <div class="col-12 mt-2 mb-2">
-                <div class="p">
-                    <a href="{% url 'orders:order_create' %}" class='btn btn-lg btn-block btn-primary'>
-                        {% trans "Checkout" %}
-                    </a>
-            </div>
         </div>
-        <div class="col-12 mt-4">
-            <div class="p">
-             <form class="form" action="{% url 'coupons:apply' %}" method="post">
-                <div class="input-group">
-                    {{ coupon_apply_form }}
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">{% trans 'Apply' %}</button>
-                  </div>
+        {% endfor %}
+    </div>
+    <div class="col-12 col-xs-6 col-md-6 col-lg-4 mt-2">
+        <div class="card">
+            <div class="card-body">
+                {% if cart.coupon %}
+                <div class="col-12 mt-2 ">
+                    <div class="d-flex">
+                        <div class="p">{% trans "Subtotal" %}:</div>
+                        <div class="p ml-auto">{{ cart.get_total_price }} ₽</div>
+                    </div>
                 </div>
+                <div class="col-12 mt-2 ">
+                    {% with code=cart.coupon.code discount=cart.coupon.discount %}
+                    <div class="d-flex">
+                        <div class="p">{% trans "Discount" %} ({{ discount }}% ("{{ code }}"):</div>
+                        <div class="p ml-auto">-{{ cart.get_discount|floatformat:"2" }} ₽</div>
+                    </div>
+                    {% endwith %}
                 </div>
-                {% csrf_token %}
-            </form>
-        </div>
+                {% endif %}
+                <div class="col-12 mt-2 ">
+                    <div class="d-flex">
+                        <div class="p">{% trans "Total" %}:</div>
+                        <div class="p ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2 mb-2">
+                    <div class="p">
+                        <a href="{% url 'orders:order_create' %}" class='btn btn-lg btn-block btn-primary'>
+                            {% trans "Checkout" %}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="p">
+                        <form class="form" action="{% url 'coupons:apply' %}" method="post">
+                            <div class="input-group">
+                                {{ coupon_apply_form }}
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">{% trans 'Apply' %}</button>
+                                </div>
+                            </div>
+                    </div>
+                    {% csrf_token %}
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+    {% else %}
+    <h3>{% trans "Your cart is empty" %}</h3>
+    {% endif %}
+    {% endblock %}
 </div>
-
-
-
-
-{% else %}
-<h3>{% trans "Your cart is empty" %}</h3>
-{% endif %}
-{% endblock %}
