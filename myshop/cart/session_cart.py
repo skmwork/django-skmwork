@@ -6,6 +6,7 @@ from .models import Cart, CartItem
 from django.db.models import Count
 from django.db.models import Sum
 from django.db.models.functions import Coalesce
+from django.utils import timezone
 
 
 class SessionCart(object):
@@ -22,6 +23,7 @@ class SessionCart(object):
         except Cart.DoesNotExist:           
             cart = Cart(session_key = self.session_key)
             
+
         if request.user.id and not cart.user:
             cart.user = request.user
 
@@ -94,3 +96,15 @@ class SessionCart(object):
 
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()
+
+    def set_coupon(self, code):
+        try:
+            now = timezone.now()
+            self.cart.coupon = Coupon.objects.get(code__iexact=code,
+                                        valid_from__lte=now,
+                                        valid_to__gte=now,
+                                        active=True)
+            self.cart.save() 
+            return True
+        except Coupon.DoesNotExist:
+            return False
