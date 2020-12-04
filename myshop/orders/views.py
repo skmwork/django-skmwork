@@ -13,7 +13,7 @@ def order_create(request):
         if form.is_valid():
             order = form.save(commit=False)
             order.user = request.user
-            
+            order.Cart = session_cart.cart
             if session_cart.coupon:
                 order.coupon = cart.coupon
                 order.discount = cart.coupon.discount

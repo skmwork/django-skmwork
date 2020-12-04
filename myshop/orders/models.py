@@ -3,6 +3,7 @@ from shop.models import Product
 from decimal import Decimal
 from django.core.validators import MinValueValidator, MaxValueValidator
 from coupons.models import Coupon
+from cart.models import Cart
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
@@ -19,6 +20,11 @@ class Order(models.Model):
                                null=True,
                                blank=True,
                                on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart,
+                            related_name='orders',
+                            null=True,
+                            blank=True,
+                            on_delete=models.CASCADE)
     discount = models.IntegerField(_('Discount'), default=0,
                                    validators=[MinValueValidator(0),
                                                MaxValueValidator(100)])
