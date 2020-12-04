@@ -45,7 +45,7 @@ class SessionCart(object):
             if cart_item.is_deleted==True:
                 cart_item.is_deleted=False
 
-            cart.save()
+            cart_item.save()
         except CartItem.DoesNotExist:
             cart_item = CartItem(product_id=product.id, quantity=quantity, cart=self.cart, price=product.price)
             cart_item.save()
