@@ -78,6 +78,8 @@ TEMPLATES = [
     },
 ]
 
+SESSION_ENGINE = 'myshop.session_backend'
+
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
 # Database
