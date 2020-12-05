@@ -62,7 +62,7 @@ class Cart(models.Model):
         self.save()
 
     def remove(self, product):
-        self.cart.items.filter(product_id=product.id, is_deleted=False).update(is_deleted=True)
+        self.items.filter(product_id=product.id, is_deleted=False).update(is_deleted=True)
 
     def set_coupon(self, code):
         try:
