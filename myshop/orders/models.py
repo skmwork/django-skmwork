@@ -9,7 +9,8 @@ from django.conf import settings
 
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='orders_created', on_delete=models.CASCADE, null=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='orders_created', on_delete=models.CASCADE,
+                             null=False)
     address = models.CharField(_('Address'), max_length=250, null=True, blank=True)
     comment = models.CharField(_('Comment'), max_length=250, null=True, blank=True)
     created = models.DateTimeField(_('Created'), auto_now_add=True)
@@ -21,10 +22,10 @@ class Order(models.Model):
                                blank=True,
                                on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart,
-                            related_name='orders',
-                            null=True,
-                            blank=True,
-                            on_delete=models.CASCADE)
+                             related_name='orders',
+                             null=True,
+                             blank=True,
+                             on_delete=models.CASCADE)
     discount = models.IntegerField(_('Discount'), default=0,
                                    validators=[MinValueValidator(0),
                                                MaxValueValidator(100)])
@@ -37,8 +38,9 @@ class Order(models.Model):
     def __str__(self):
         return 'Order {}'.format(self.id)
 
-    def get_total_cost(self):
-        total_cost = sum(item.get_cost() for item in self.items.all())
+    @property
+    def total_cost(self):
+        total_cost = sum(item.get_cost() for item in self.items.filter(is_deleted=False).all())
         return total_cost - total_cost * (self.discount / Decimal('100'))
 
 
@@ -48,12 +50,14 @@ class OrderItem(models.Model):
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(_('Quantity'), default=1)
 
-    def __str__(self):
-        return '{}'.format(self.id)
-
-    def get_cost(self):
-        return self.price * self.quantity
-
     class Meta:
         verbose_name = _('Order item')
         verbose_name_plural = _('Order items')
+
+    def __str__(self):
+        return '{}'.format(self.id)
+
+    @property
+    def total_cost(self):
+        return self.price * self.quantity
+

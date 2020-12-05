@@ -15,21 +15,21 @@
                 {% for item in cart.items %}
                 <div class="d-flex mt-2">
                     <div class="p">{{ item.product.name }} ({{ item.quantity }}):</div>
-                    <div class="p ml-auto">{{ item.total_price }} ₽</div>
+                    <div class="p ml-auto">{% widthratio item.price 1 item.quantity %} ₽</div>
                 </div>
                 {% endfor %}
                 {% if cart.coupon %}
                 {% with code=cart.coupon.code discount=cart.coupon.discount %}
                 <div class="d-flex mt-2">
                     <div class="p">{% trans "Discount" %} {{ discount }}% ("{{ code }}"):</div>
-                    <div class="p ml-auto">-{{ cart.get_discount|floatformat:"2" }} ₽</div>
+                    <div class="p ml-auto">-{{ cart.total_discount|floatformat:"2" }} ₽</div>
                 </div>
                 {% endwith %}
                 {% endif %}
                 <br />
                 <div class="d-flex mt-2">
                     <div class="p">{% trans "Total" %}:</div>
-                    <div class="p ml-auto">{{ cart.get_total_price_after_discount|floatformat:"2" }} ₽</div>
+                    <div class="p ml-auto">{{ cart.total_price_after_discount|floatformat:"2" }} ₽</div>
                 </div>
                 <form action="." method="post" class="form mt-2">
                     {{ form|crispy }}

@@ -13,10 +13,10 @@ def order_create(request):
         if form.is_valid():
             order = form.save(commit=False)
             order.user = request.user
-            order.Cart = session_cart.cart
+            order.cart = session_cart.cart
             if session_cart.coupon:
-                order.coupon = cart.coupon
-                order.discount = cart.coupon.discount
+                order.coupon = session_cart.coupon
+                order.discount = session_cart.coupon.discount
             order.save()
             for item in session_cart.items:
                 OrderItem.objects.create(order=order,
