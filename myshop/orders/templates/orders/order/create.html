@@ -15,7 +15,7 @@
                 {% for item in cart.active_items %}
                 <div class="d-flex mt-2">
                     <div class="p">{{ item.product.name }} ({{ item.quantity }}):</div>
-                    <div class="p ml-auto">{% widthratio item.price 1 item.quantity %} ₽</div>
+                    <div class="p ml-auto">{{ item.total_cost }} ₽</div>
                 </div>
                 {% endfor %}
                 {% if cart.coupon %}
