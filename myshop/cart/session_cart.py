@@ -22,7 +22,7 @@ class SessionCart(object):
         return len(self.cart)
 
     @property
-    def items(self):        
+    def active_items(self):
         return self.cart.active_items
 
     @property

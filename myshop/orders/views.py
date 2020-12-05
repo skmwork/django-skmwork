@@ -18,7 +18,7 @@ def order_create(request):
                 order.coupon = session_cart.coupon
                 order.discount = session_cart.coupon.discount
             order.save()
-            for item in session_cart.items:
+            for item in session_cart.active_items:
                 OrderItem.objects.create(order=order,
                                          product=item.product,
                                          price=item.price,

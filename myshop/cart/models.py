@@ -39,7 +39,7 @@ class Cart(models.Model):
 
     @property
     def total_cost(self):
-        return sum(item.total_cost for item in self.items.all())
+        return sum(item.total_cost for item in self.active_items.filter(is_deleted=False).all())
 
     @property
     def active_items(self):
