@@ -34,65 +34,6 @@ class Cart(models.Model):
     def __str__(self):
         return 'Cart {}'.format(self.id)
 
-    def __len__(self):
-        return self.items.filter(is_deleted=False).count()
-
-    @property
-    def total_cost(self):
-        return sum(item.total_cost for item in self.active_items.filter(is_deleted=False).all())
-
-    @property
-    def active_items(self):
-        return self.items.filter(is_deleted=False).all()
-
-    @property
-    def total_price_after_discount(self):
-        return self.total_cost - self.total_discount
-
-    @property
-    def total_discount(self):
-        return self.total_cost * (self.discount / Decimal('100')) 
-
-    def clear(self):
-        self.cart.items.update(is_deleted=True)
-
-    def order(self):
-        self.items.update(is_ordered=True)
-        self.is_ordered = True
-        self.save()
-
-    def remove(self, product):
-        self.items.filter(product_id=product.id, is_deleted=False).update(is_deleted=True)
-
-    def set_coupon(self, code):
-        try:
-            now = timezone.now()
-            coupon = Coupon.objects.get(code__iexact=code,
-                                        valid_from__lte=now,
-                                        valid_to__gte=now,
-                                        active=True)
-            if coupon:
-                self.coupon = coupon
-                self.discount = coupon.discount
-                self.save()
-            return True
-        except Coupon.DoesNotExist:
-            return False
-
-    def add(self, product, quantity=1, update_quantity=False):
-        try:
-            cart_item = self.items.get(product_id=product.id)
-            if update_quantity or cart_item.is_deleted:
-                cart_item.quantity = quantity
-            else:
-                cart_item.quantity += quantity
-            if cart_item.is_deleted:
-                cart_item.is_deleted = False
-            cart_item.save()
-        except CartItem.DoesNotExist:
-            cart_item = CartItem(product_id=product.id, quantity=quantity, cart=self, price=product.price)
-            cart_item.save()
-
 
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, related_name='items', on_delete=models.CASCADE)

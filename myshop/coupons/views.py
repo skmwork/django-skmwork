@@ -5,7 +5,7 @@ from .models import Coupon
 from .forms import CouponApplyForm
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from cart.session_cart import SessionCart
+from cart.session_cart import get_cart
 
 
 
@@ -14,10 +14,10 @@ def coupon_apply(request):
     form = CouponApplyForm(request.POST)
     if form.is_valid():
         code = form.cleaned_data['code']
-        session_cart = SessionCart(request)
-        coupon_is_applyed = session_cart.set_coupon(code)
-        if coupon_is_applyed:
+        cart = get_cart(request)
+        try:
+            cart.set_coupon(code)
             messages.success(request, _('Coupon was applied successfully'))
-        else:
+        except Coupon.DoesNotExist:
             messages.error(request, _("Coupon wasn't found"))
     return redirect('cart:cart_detail')
