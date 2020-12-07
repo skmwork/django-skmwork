@@ -12,10 +12,8 @@ from cart.session_cart import get_cart
 def coupon_apply(request):
     form = CouponApplyForm(request.POST)
     if form.is_valid():
-        code = form.cleaned_data['code']
-        cart = get_cart(request)
         try:
-            cart.set_coupon(code)
+            get_cart(request).set_coupon(form.cleaned_data['code'])
             messages.success(request, _('Coupon was applied successfully'))
         except Coupon.DoesNotExist:
             messages.error(request, _("Coupon wasn't found"))
