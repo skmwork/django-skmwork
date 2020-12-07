@@ -1,11 +1,12 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm
 from .models import Profile
 from .forms import UserEditForm, ProfileEditForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth import authenticate, login
 
 
 def register(request):
@@ -19,7 +20,12 @@ def register(request):
             # Save the User object
             new_user.save()
             profile = Profile.objects.create(user=new_user)
-            return render(request, 'accounts/registration/register_done.html', {'new_user': new_user})
+            messages.info(request, _("Thanks for registering. You are now logged in."))
+            new_user = authenticate(username=user_form.cleaned_data['username'],
+                                    password=user_form.cleaned_data['password'],
+                                    )
+            login(request, new_user)
+            return redirect('shop:product_list')
     else:
         user_form = UserRegistrationForm()
     return render(request, 'accounts/account/register.html', {'user_form': user_form})
