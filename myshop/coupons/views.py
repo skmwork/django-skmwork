@@ -8,7 +8,6 @@ from django.utils.translation import gettext_lazy as _
 from cart.session_cart import get_cart
 
 
-
 @require_POST
 def coupon_apply(request):
     form = CouponApplyForm(request.POST)

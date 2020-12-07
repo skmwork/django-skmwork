@@ -1,4 +1,4 @@
-{% load i18n %}
+﻿{% load i18n %}
 {% load static %}
 <html>
 <head>
@@ -14,20 +14,19 @@
 <body>
     {% include 'base/navbar.html' %}
 
-        <div class='container'>
-            <div class="row">
-                <div class="col-12">
-            {% if messages %}
-            <ul class="p-0 messages">
-                {% for message in messages %}
-                <li {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
+    <div class='container'>
+        <div class="row">
+            <div class="col-12">
+                {% if messages %}
+                <ul class="p-0 messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
-
         </div>
-       {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
     </div>
 
     <form id="csrf_token">{% csrf_token %}</form>

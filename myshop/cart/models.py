@@ -1,11 +1,9 @@
-from django.db import models
-from shop.models import Product
-from decimal import Decimal
-from django.core.validators import MinValueValidator, MaxValueValidator
-from coupons.models import Coupon
-from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-from django.utils import timezone
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from coupons.models import Coupon
+from shop.models import Product
 
 
 class Cart(models.Model):

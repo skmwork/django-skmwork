@@ -16,7 +16,7 @@ def get_cart(request):
     except Cart.DoesNotExist:
         cart = None
 
-    if not cart and request.user.id:
+    if not cart and request.user.is_authenticated:
         try:
             cart = Cart.objects.filter(user=request.user, is_ordered=False).order_by('-updated')[0]
         except IndexError:
@@ -25,8 +25,9 @@ def get_cart(request):
     if not cart:
         cart = Cart(session_key=session_key)
 
-    if request.user.id and not cart.user:
+    if request.user.is_authenticated and not cart.user:
         cart.user = request.user
+
     return SessionCart(cart)
 
 
@@ -52,7 +53,7 @@ class SessionCart(object):
     @property
     def coupon(self):
         now = timezone.now()
-        return self.cart.coupon if self.cart.coupon and self.cart.coupon.valid_from <= now and self.cart.coupon.valid_to >= now and self.cart.coupon.active==True else None
+        return self.cart.coupon if self.cart.coupon and self.cart.coupon.valid_from <= now and self.cart.coupon.valid_to >= now and self.cart.coupon.active == True else None
 
     @property
     def total_price(self):
