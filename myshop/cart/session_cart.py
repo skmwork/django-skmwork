@@ -4,49 +4,62 @@ from coupons.models import Coupon
 from django.utils import timezone
 
 
-
 def get_cart(request):
-    return SessionCart(request)
+    session_key = request.session.session_key
+    if not session_key:
+        request.session["session_key"] = 123
+        request.session.cycle_key()
+    session_key = request.session.session_key
+
+    try:
+        cart = Cart.objects.get(session_key=session_key, is_ordered=False)
+    except Cart.DoesNotExist:
+        cart = None
+
+    if not cart and request.user.id:
+        try:
+            cart = Cart.objects.filter(user=request.user, is_ordered=False).order_by('-updated')[0]
+        except IndexError:
+            cart = None
+
+    if not cart:
+        cart = Cart(session_key=session_key)
+
+    if request.user.id and not cart.user:
+        cart.user = request.user
+    return SessionCart(cart)
 
 
 class SessionCart(object):
-    def __init__(self, request):
-        session_key = request.session.session_key
-        if not session_key:
-            request.session["session_key"] = 123
-            request.session.cycle_key()
-        session_key = request.session.session_key
-        try:
-            cart = Cart.objects.get(session_key=session_key, is_ordered=False)
-        except Cart.DoesNotExist:
-            cart = Cart(session_key=session_key)
-
-        if request.user.id and not cart.user:
-            cart.user = request.user
-
+    def __init__(self, cart):
         self.cart = cart
+
+    def __len__(self):
+        return self.active_items.count()
 
     @property
     def active_items(self):
-        return self.cart.items.filter(is_deleted=False).all()
+        return self.cart.items.filter(is_deleted=False)
 
     @property
     def total_price_after_discount(self):
-        return self.total_cost - self.total_discount
+        return self.total_price - self.total_discount
 
     @property
     def total_discount(self):
-        return self.total_cost * (self.cart.discount / Decimal('100'))
+        return self.total_price * (self.coupon.discount / Decimal('100')) if self.coupon else 0
 
     @property
-    def total_cost(self):
-        return sum(item.total_cost for item in self.active_items.filter(is_deleted=False).all())
+    def coupon(self):
+        now = timezone.now()
+        return self.cart.coupon if self.cart.coupon and self.cart.coupon.valid_from <= now and self.cart.coupon.valid_to >= now and self.cart.coupon.active==True else None
 
-    def __len__(self):
-        return self.cart.items.filter(is_deleted=False).count()
+    @property
+    def total_price(self):
+        return sum(item.total_cost for item in self.active_items.all())
 
     def clear(self):
-        self.cart.items.filter(is_deleted=True).update(is_deleted=True)
+        self.cart.active_items.update(is_deleted=True)
 
     def order(self):
         self.cart.items.update(is_ordered=True)
@@ -55,6 +68,9 @@ class SessionCart(object):
 
     def remove(self, product):
         self.cart.items.filter(product_id=product.id, is_deleted=False).update(is_deleted=True)
+
+    def discount(self):
+        return self.coupon.discount if self.coupon else 0
 
     def set_coupon(self, code):
         if not self.cart.id:
@@ -66,7 +82,6 @@ class SessionCart(object):
                                     active=True)
         if coupon:
             self.cart.coupon = coupon
-            self.cart.discount = coupon.discount
             self.cart.save()
 
     def add(self, product, quantity=1, update_quantity=False):
