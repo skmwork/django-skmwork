@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 08:51+0000\n"
+"POT-Creation-Date: 2020-12-07 20:23+0000\n"
 "PO-Revision-Date: 2020-08-27 10:28+0000\n"
 "Last-Translator: b'admin  <ya@ya.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,120 +69,121 @@ msgstr ""
 msgid "Create my account"
 msgstr ""
 
-#: templates/registration/logged_out.html:4
-#: templates/registration/logged_out.html:6
+#: templates/accounts/account/register_done.html:3
+#: templates/accounts/account/register_done.html:8
+msgid "Welcome"
+msgstr ""
+
+#: templates/accounts/account/register_done.html:9
+msgid "Your account has been successfully created. Now you can"
+msgstr ""
+
+#: templates/accounts/account/register_done.html:9
+msgid "log in"
+msgstr ""
+
+#: templates/accounts/registration/logged_out.html:4
+#: templates/accounts/registration/logged_out.html:6
 msgid "Logged out"
 msgstr ""
 
-#: templates/registration/logged_out.html:7
+#: templates/accounts/registration/logged_out.html:7
 msgid "You have been successfully logged out. You can "
 msgstr ""
 
-#: templates/registration/logged_out.html:7
+#: templates/accounts/registration/logged_out.html:7
 msgid "log-in again"
 msgstr ""
 
-#: templates/registration/login.html:10 templates/registration/login.html:18
+#: templates/accounts/registration/login.html:10
+#: templates/accounts/registration/login.html:17
 msgid "Log in"
 msgstr ""
 
-#: templates/registration/login.html:16
-#: templates/registration/password_reset_form.html:10
+#: templates/accounts/registration/login.html:15
+#: templates/accounts/registration/password_reset_form.html:10
 msgid "Forgotten your password?"
 msgstr ""
 
-#: templates/registration/login.html:17
+#: templates/accounts/registration/login.html:16
 msgid "Registration"
 msgstr ""
 
-#: templates/registration/password_change_done.html:4
-#: templates/registration/password_change_done.html:9
+#: templates/accounts/registration/password_change_done.html:4
+#: templates/accounts/registration/password_change_done.html:9
 msgid "Password changed"
 msgstr ""
 
-#: templates/registration/password_change_done.html:10
+#: templates/accounts/registration/password_change_done.html:10
 msgid "Your password has been successfully changed."
 msgstr ""
 
-#: templates/registration/password_change_form.html:8
+#: templates/accounts/registration/password_change_form.html:8
 msgid "Change you password"
 msgstr ""
 
-#: templates/registration/password_change_form.html:9
+#: templates/accounts/registration/password_change_form.html:9
 msgid "Use the form below to change your password."
 msgstr ""
 
-#: templates/registration/password_change_form.html:13
+#: templates/accounts/registration/password_change_form.html:14
 msgid "Change"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:4
+#: templates/accounts/registration/password_reset_complete.html:4
 msgid "Password reset"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:9
+#: templates/accounts/registration/password_reset_complete.html:9
 msgid "Password set"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "Your password has been set. You can"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "log in now"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:4
-#: templates/registration/password_reset_confirm.html:9
-#: templates/registration/password_reset_done.html:4
-#: templates/registration/password_reset_done.html:9
-#: templates/registration/password_reset_form.html:5
+#: templates/accounts/registration/password_reset_confirm.html:4
+#: templates/accounts/registration/password_reset_confirm.html:9
+#: templates/accounts/registration/password_reset_done.html:4
+#: templates/accounts/registration/password_reset_done.html:9
+#: templates/accounts/registration/password_reset_form.html:5
 msgid "Reset your password"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:11
+#: templates/accounts/registration/password_reset_confirm.html:11
 msgid "Please enter your new password twice:"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:15
+#: templates/accounts/registration/password_reset_confirm.html:15
 msgid "Change my password"
 msgstr ""
 
-#: templates/registration/password_reset_done.html:10
+#: templates/accounts/registration/password_reset_done.html:10
 msgid "We've emailed you instructions for setting your password."
 msgstr ""
 
-#: templates/registration/password_reset_done.html:11
+#: templates/accounts/registration/password_reset_done.html:11
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:11
+#: templates/accounts/registration/password_reset_form.html:11
 msgid "Enter your e-mail address to obtain a new password."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:14
-msgid "Send e-mail"
+#: views.py:23
+msgid "Thanks for registering. You are now logged in."
 msgstr ""
 
-#: templates/registration/register_done.html:4
-#: templates/registration/register_done.html:9
-msgid "Welcome"
-msgstr ""
-
-#: templates/registration/register_done.html:10
-msgid "Your account has been successfully created. Now you can"
-msgstr ""
-
-#: templates/registration/register_done.html:10
-msgid "log in"
-msgstr ""
-
-#: views.py:36
+#: views.py:42
 msgid "Profile updated successfully"
 msgstr ""
 
-#: views.py:38
+#: views.py:44
 msgid "Error updating your profile"
 msgstr ""

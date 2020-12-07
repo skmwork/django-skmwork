@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 08:51+0000\n"
-"PO-Revision-Date: 2020-11-03 23:04+0000\n"
-"Last-Translator: b'kostya 123 <adin@admin.ru>'\n"
+"POT-Creation-Date: 2020-12-07 20:23+0000\n"
+"PO-Revision-Date: 2020-12-07 20:23+0000\n"
+"Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -69,92 +69,104 @@ msgstr "Пожалуйста, зарегистрируйтесь, использ
 msgid "Create my account"
 msgstr "Создать профиль"
 
-#: templates/registration/logged_out.html:4
-#: templates/registration/logged_out.html:6
+#: templates/accounts/account/register_done.html:3
+#: templates/accounts/account/register_done.html:8
+msgid "Welcome"
+msgstr "Добро пожаловать!"
+
+#: templates/accounts/account/register_done.html:9
+msgid "Your account has been successfully created. Now you can"
+msgstr "Ваш аккаунт успешно создан. Сейчас вы можете"
+
+#: templates/accounts/account/register_done.html:9
+msgid "log in"
+msgstr "войти"
+
+#: templates/accounts/registration/logged_out.html:4
+#: templates/accounts/registration/logged_out.html:6
 msgid "Logged out"
 msgstr "Выйти"
 
-#: templates/registration/logged_out.html:7
+#: templates/accounts/registration/logged_out.html:7
 msgid "You have been successfully logged out. You can "
 msgstr "Вы успешно вышли из аккаунта"
 
-#: templates/registration/logged_out.html:7
+#: templates/accounts/registration/logged_out.html:7
 msgid "log-in again"
 msgstr "войти снова"
 
-#: templates/registration/login.html:10 templates/registration/login.html:18
-#| msgid "log in"
+#: templates/accounts/registration/login.html:10
+#: templates/accounts/registration/login.html:17
 msgid "Log in"
 msgstr "войти"
 
-#: templates/registration/login.html:16
-#: templates/registration/password_reset_form.html:10
+#: templates/accounts/registration/login.html:15
+#: templates/accounts/registration/password_reset_form.html:10
 msgid "Forgotten your password?"
 msgstr "Забыли ваш пароль?"
 
-#: templates/registration/login.html:17
+#: templates/accounts/registration/login.html:16
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/registration/password_change_done.html:4
-#: templates/registration/password_change_done.html:9
+#: templates/accounts/registration/password_change_done.html:4
+#: templates/accounts/registration/password_change_done.html:9
 msgid "Password changed"
 msgstr "Изменение пароля"
 
-#: templates/registration/password_change_done.html:10
+#: templates/accounts/registration/password_change_done.html:10
 msgid "Your password has been successfully changed."
 msgstr "Ваш пароль был успешно изменён"
 
-#: templates/registration/password_change_form.html:8
+#: templates/accounts/registration/password_change_form.html:8
 msgid "Change you password"
 msgstr "Изменить ваш пароль"
 
-#: templates/registration/password_change_form.html:9
+#: templates/accounts/registration/password_change_form.html:9
 msgid "Use the form below to change your password."
 msgstr "Используя форму ниже измените ваш пароль"
 
-#: templates/registration/password_change_form.html:13
+#: templates/accounts/registration/password_change_form.html:14
 msgid "Change"
 msgstr "Изменить"
 
-#: templates/registration/password_reset_complete.html:4
+#: templates/accounts/registration/password_reset_complete.html:4
 msgid "Password reset"
 msgstr "Изменение пароля"
 
-#: templates/registration/password_reset_complete.html:9
+#: templates/accounts/registration/password_reset_complete.html:9
 msgid "Password set"
 msgstr "Изменение пароля"
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "Your password has been set. You can"
 msgstr "Ваш пароль был установлен. Вы можете"
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/accounts/registration/password_reset_complete.html:10
 msgid "log in now"
 msgstr "войти сейчас"
 
-#: templates/registration/password_reset_confirm.html:4
-#: templates/registration/password_reset_confirm.html:9
-#: templates/registration/password_reset_done.html:4
-#: templates/registration/password_reset_done.html:9
-#: templates/registration/password_reset_form.html:5
+#: templates/accounts/registration/password_reset_confirm.html:4
+#: templates/accounts/registration/password_reset_confirm.html:9
+#: templates/accounts/registration/password_reset_done.html:4
+#: templates/accounts/registration/password_reset_done.html:9
+#: templates/accounts/registration/password_reset_form.html:5
 msgid "Reset your password"
 msgstr "Сброс вашего пароля"
 
-#: templates/registration/password_reset_confirm.html:11
+#: templates/accounts/registration/password_reset_confirm.html:11
 msgid "Please enter your new password twice:"
 msgstr "Пожалуйста, введите ваш пароль дважды"
 
-#: templates/registration/password_reset_confirm.html:15
-#| msgid "Change you password"
+#: templates/accounts/registration/password_reset_confirm.html:15
 msgid "Change my password"
 msgstr "Изменить ваш пароль"
 
-#: templates/registration/password_reset_done.html:10
+#: templates/accounts/registration/password_reset_done.html:10
 msgid "We've emailed you instructions for setting your password."
 msgstr "Мы выслали вам инструкции для установки пароля"
 
-#: templates/registration/password_reset_done.html:11
+#: templates/accounts/registration/password_reset_done.html:11
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with."
@@ -162,34 +174,24 @@ msgstr ""
 "Если вы не получили email, пожалуйста убедитесь, что введённый адрес "
 "использовался для регистрации"
 
-#: templates/registration/password_reset_form.html:11
+#: templates/accounts/registration/password_reset_form.html:11
 msgid "Enter your e-mail address to obtain a new password."
 msgstr "Введите ваш e-mail адрес для получения новго пароля"
 
-#: templates/registration/password_reset_form.html:14
-msgid "Send e-mail"
-msgstr "Отправить письмо"
+#: views.py:23
+msgid "Thanks for registering. You are now logged in."
+msgstr "Спасибо за регистрацию. Теперь вы вошли."
 
-#: templates/registration/register_done.html:4
-#: templates/registration/register_done.html:9
-msgid "Welcome"
-msgstr "Добро пожаловать!"
-
-#: templates/registration/register_done.html:10
-msgid "Your account has been successfully created. Now you can"
-msgstr "Ваш аккаунт успешно создан. Сейчас вы можете"
-
-#: templates/registration/register_done.html:10
-msgid "log in"
-msgstr "войти"
-
-#: views.py:36
+#: views.py:42
 msgid "Profile updated successfully"
 msgstr "Профиль успешно обновлён"
 
-#: views.py:38
+#: views.py:44
 msgid "Error updating your profile"
 msgstr "Ошибка обновления профиля"
+
+#~ msgid "Send e-mail"
+#~ msgstr "Отправить письмо"
 
 #~ msgid "Save changes"
 #~ msgstr "Сохранить изменения"
