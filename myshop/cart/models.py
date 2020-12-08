@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from coupons.models import Coupon
 from shop.models import Product
+from decimal import Decimal
 
 
 class Cart(models.Model):
@@ -20,9 +21,6 @@ class Cart(models.Model):
                                null=True,
                                blank=True,
                                on_delete=models.CASCADE)
-    discount = models.IntegerField(_('Discount'), default=0,
-                                   validators=[MinValueValidator(0),
-                                               MaxValueValidator(100)])
 
     class Meta:
         ordering = ('-created',)
@@ -31,6 +29,29 @@ class Cart(models.Model):
 
     def __str__(self):
         return 'Cart {}'.format(self.id)
+
+    def __len__(self):
+        return self.active_items.count()
+
+    @property
+    def active_items(self):
+        return self.items.filter(is_deleted=False)
+
+    @property
+    def total_price_after_discount(self):
+        return self.total_price - self.total_discount
+
+    @property
+    def total_discount(self):
+        return self.total_price * (self.discount / Decimal('100')) if self.coupon else 0
+
+    @property
+    def total_price(self):
+        return sum(item.total_cost for item in self.active_items.all())
+
+    @property
+    def discount(self):
+        return self.coupon.discount if self.coupon and self.coupon.is_valid else 0
 
 
 class CartItem(models.Model):

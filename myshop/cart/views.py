@@ -4,6 +4,7 @@ from shop.models import Product
 from cart.session_cart import get_cart
 from .forms import CartAddProductForm
 from coupons.forms import CouponApplyForm
+from .models import Cart, CartItem
 
 
 @require_POST
@@ -11,14 +12,32 @@ def cart_add(request, product_id):
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        get_cart(request).add(product=get_object_or_404(Product, id=product_id),
-                         quantity=cd['quantity'],
-                         update_quantity=cd['update'])
+
+    quantity = cd['quantity']
+    update_quantity = cd['update']
+    product = get_object_or_404(Product, id=product_id)
+    cart = get_cart(request)
+
+    if not cart.id:
+        cart.save()
+    try:
+        cart_item = cart.items.get(product_id=product)
+        if update_quantity or cart_item.is_deleted:
+            cart_item.quantity = quantity
+        else:
+            cart_item.quantity += quantity
+        if cart_item.is_deleted:
+            cart_item.is_deleted = False
+        cart_item.save()
+    except CartItem.DoesNotExist:
+        cart.items.create(product_id=product.id, quantity=quantity, cart=cart, price=product.price)
+
     return redirect('cart:cart_detail')
 
 
 def cart_remove(request, product_id):
-    get_cart(request).remove(get_object_or_404(Product, id=product_id))
+    get_cart(request).items.filter(product_id=get_object_or_404(Product, id=product_id).id, is_deleted=False)\
+        .update(is_deleted=True)
     return redirect('cart:cart_detail')
 
 
