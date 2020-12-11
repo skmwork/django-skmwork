@@ -25,7 +25,7 @@
                 <a class="card-img-hover" href="{{ product.get_absolute_url }}"><img class="d-block w-100" src="{{ im.url }}"></a>
                 {% endthumbnail %}
             </div>
-            <div class="col-6 col-xs-6 col-md-6 col-lg-10">
+            <div class="col-5 col-xs-5 col-md-5 col-lg-9">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-md-12 col-lg-4">
                         <a href="{{ product.get_absolute_url }}"><p class="text">{{ product.name }}</p></a>
@@ -35,9 +35,13 @@
                     </div>
                     <div class="col-12 col-xs-12 col-md-12 col-lg-4">
                         <p class="text">{{ item.total_cost }} ₽</p>
-                        <p class="text"><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %} </a></p>
                     </div>
                 </div>
+            </div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1">
+                <a type="button" class="close" aria-label="Close" href="{% url 'cart:cart_remove' product.id %}">
+                    <span aria-hidden="true">&times;</span>
+                </a>
             </div>
             {% endwith %}
         </div>
