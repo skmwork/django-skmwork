@@ -27,7 +27,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="nav-item {% if request.path == cart_url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">{% trans "Cart" %} {% if cart|length > 0 %}<span class="badge badge-pill badge-danger">{{ cart|length }}</span>{% endif %}</a>
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">{% trans "Cart" %} {% if cart.active_items_count > 0 %}<span class="badge badge-pill badge-danger">{{ cart.active_items_count }}</span>{% endif %}</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item {% if request.path == account_url %}active{% endif %}">

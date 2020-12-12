@@ -30,7 +30,8 @@ class Cart(models.Model):
     def __str__(self):
         return 'Cart {}'.format(self.id)
 
-    def __len__(self):
+    @property
+    def active_items_count(self):
         return self.active_items.count()
 
     @property
