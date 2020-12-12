@@ -14,7 +14,7 @@
                 <p><h5>{% trans "Your order" %}</h5></p>
                 {% for item in cart.active_items %}
                 <div class="d-flex mt-2">
-                    <div class="p">{{ item.product.name }} ({{ item.quantity }}):</div>
+                    <div class="p"><a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a> ({{ item.quantity }}):</div>
                     <div class="p ml-auto">{{ item.total_cost }} ₽</div>
                 </div>
                 {% endfor %}

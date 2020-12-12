@@ -10,7 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 @login_required
 def order_create(request):
     cart = get_cart(request)
-    if cart.active_items_count == 0:
+    if cart.is_empty:
         return redirect('cart:cart_detail')
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
@@ -32,6 +32,7 @@ def order_create(request):
             cart.save()
 
             messages.success(request, _("Your order has been successfully completed. Your order number is") + str(order.id))
+
             return redirect('shop:product_list')
     else:
         form = OrderCreateForm

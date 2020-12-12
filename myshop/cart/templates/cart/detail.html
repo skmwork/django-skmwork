@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-{% if cart.active_items_count > 0 %}
+{% if not cart.is_empty %}
 <div class="row">
     <div class="col-12">
         <h3>{% trans "Your shopping cart" %}</h3>

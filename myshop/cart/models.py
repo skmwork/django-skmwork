@@ -15,7 +15,6 @@ class Cart(models.Model):
     updated = models.DateTimeField(_('Updated'), auto_now=True)
     is_active = models.BooleanField(default=True)
     is_ordered = models.BooleanField(default=False)
-
     coupon = models.ForeignKey(Coupon,
                                related_name='carts',
                                null=True,
@@ -33,6 +32,10 @@ class Cart(models.Model):
     @property
     def active_items_count(self):
         return self.active_items.count()
+
+    @property
+    def is_empty(self):
+        return self.active_items_count == 0
 
     @property
     def active_items(self):

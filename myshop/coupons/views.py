@@ -14,10 +14,12 @@ def coupon_apply(request):
         try:
             cart = get_cart(request)
             coupon = Coupon.objects.get(code__iexact=form.cleaned_data['code'])
-            if coupon and coupon.is_valid:
+            if coupon.is_valid:
                 cart.coupon = coupon
                 cart.save()
-            messages.success(request, _('Coupon was applied successfully'))
+                messages.success(request, _('Coupon was applied successfully'))
+            else:
+                messages.error(request, _("Coupon isn't valid"))
         except Coupon.DoesNotExist:
             messages.error(request, _("Coupon wasn't found"))
     return redirect('cart:cart_detail')

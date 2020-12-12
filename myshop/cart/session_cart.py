@@ -16,16 +16,16 @@ def get_cart(request):
     except IndexError:
         cart = None
 
-    if not cart and request.user.is_authenticated:
+    if cart is None and request.user.is_authenticated:
         try:
             cart = Cart.objects.filter(user=request.user, is_ordered=False).order_by('-updated')[0]
         except IndexError:
             cart = None
 
-    if not cart:
+    if cart is None:
         cart = Cart(session_key=session_key)
 
-    if request.user.is_authenticated and not cart.user:
+    if request.user.is_authenticated and cart.user is None:
         cart.user = request.user
 
     return cart
