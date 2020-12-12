@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 21:04+0000\n"
+"POT-Creation-Date: 2020-12-12 19:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:7 models.py:18
+#: apps.py:7 models.py:23
 msgid "Coupons"
 msgstr ""
 
-#: forms.py:6 models.py:17
+#: forms.py:6 models.py:22
 msgid "Coupon"
 msgstr ""
 
-#: models.py:7
+#: models.py:8
 msgid "Coupon code"
 msgstr ""
 
-#: models.py:8
+#: models.py:9
 msgid "Valid from"
 msgstr ""
 
-#: models.py:9
+#: models.py:10
 msgid "Valid to"
 msgstr ""
 
-#: models.py:10
+#: models.py:11
 msgid "Discount"
 msgstr ""
 
-#: models.py:11
+#: models.py:12
 msgid "Active"
 msgstr ""
 
-#: views.py:22
+#: views.py:20
 msgid "Coupon was applied successfully"
 msgstr ""
 
-#: views.py:25
+#: views.py:22
+msgid "Coupon isn't valid"
+msgstr ""
+
+#: views.py:24
 msgid "Coupon wasn't found"
 msgstr ""

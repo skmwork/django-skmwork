@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 21:04+0000\n"
-"PO-Revision-Date: 2020-11-02 21:06+0000\n"
+"POT-Creation-Date: 2020-12-12 19:15+0000\n"
+"PO-Revision-Date: 2020-12-12 19:16+0000\n"
 "Last-Translator: b'  <skmwork@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,39 +19,43 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: apps.py:7 models.py:18
+#: apps.py:7 models.py:23
 msgid "Coupons"
 msgstr "Купоны"
 
-#: forms.py:6 models.py:17
+#: forms.py:6 models.py:22
 msgid "Coupon"
 msgstr "Купон"
 
-#: models.py:7
+#: models.py:8
 msgid "Coupon code"
 msgstr "Код купона"
 
-#: models.py:8
+#: models.py:9
 msgid "Valid from"
 msgstr "Действует с "
 
-#: models.py:9
+#: models.py:10
 msgid "Valid to"
 msgstr "Действует по"
 
-#: models.py:10
+#: models.py:11
 msgid "Discount"
 msgstr "Скидка"
 
-#: models.py:11
+#: models.py:12
 msgid "Active"
 msgstr "Активен"
 
-#: views.py:22
+#: views.py:20
 msgid "Coupon was applied successfully"
 msgstr "Купон успешно применён"
 
-#: views.py:25
-#| msgid "Coupon code"
+#: views.py:22
+#| msgid "Coupon wasn't found"
+msgid "Coupon isn't valid"
+msgstr "Купон не действует"
+
+#: views.py:24
 msgid "Coupon wasn't found"
 msgstr "Купон не был найден"
